@@ -929,7 +929,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 
 ### Update Assignment Group  [PUT] 
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/group
+    + contextType (required,string,`course`) ... /learningcontexts/course
     + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) ... 
     contextId is the courseId from the related course context       
     Ex : /learningcontexts/course
@@ -950,15 +950,37 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 
     + Body
     
-                {
-                  "value": "TBD"  
-                }
+             {
+                "ctrldAcsActivity": true,
+                "released": true,
+                "updatable": true,
+                "availabilityDate": 1440440596995,
+                "createdAt": 1440440596995,
+                "dueDate": 1440440596995,
+                "updatedAt": 1440440596995,
+                "pointsPossible": 123,
+                "ungradablePoints": 12,
+                "treeVersion": 1,
+                "version": 1,
+                "states": [],
+                "structureNodes": [],
+                "lookupMap": {},
+                "metadata": {},
+                "liveAssessments": [],
+                "sources": [],
+                "backgroundUri": "abc",
+                "bookId": "7890",
+                "description": "testMydd",
+                "externalId": "12345",
+                "launchUri": "Mdd",
+                "note": "MyNote",
+                "noteAuthor": "testMyNoteAuthor",
+                "thumbnailUri": "testMyThumbUri",
+                "title": "testMyTitle",
+                "type": "testMyType"
+            }
                 
-+ Response 200 (application/json)
-    + Headers
-    
-            Correlation-Id:UUID
-            Access-Control-Allow-Origin:*
++ Response 204
 
 + Response 400
     [Bad Request Error][]
