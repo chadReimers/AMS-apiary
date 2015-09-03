@@ -872,7 +872,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                 "noteAuthor": "MyNoteAuthor",
                 "thumbnailUri": "MyThumbUri",
                 "title": "MyTitle",
-                "type": "MyType"
+                "type": "group"
             }
    
 + Response 200 (application/json)
@@ -911,7 +911,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                 "noteAuthor": "MyNoteAuthor",
                 "thumbnailUri": "MyThumbUri",
                 "title": "MyTitle",
-                "type": "MyType"
+                "type": "group"
             }
 
 + Response 400
@@ -977,7 +977,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                 "noteAuthor": "testMyNoteAuthor",
                 "thumbnailUri": "testMyThumbUri",
                 "title": "testMyTitle",
-                "type": "testMyType"
+                "type": "group"
             }
 
 + Response 404
@@ -1037,7 +1037,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                 "noteAuthor": "testMyNoteAuthor",
                 "thumbnailUri": "testMyThumbUri",
                 "title": "testMyTitle",
-                "type": "testMyType"
+                "type": "group"
             }
                 
 + Response 204
@@ -1060,7 +1060,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     /55b65781e4b0b6741aad0395
     /groups
     /88b65781e4amz6745axx0912
-    + type (required, string, `Revel`)... Ex: /learningcontexts/course
+    + type (required, string, `group`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
     /groups
     /88b65781e4amz6745axx0912
@@ -1071,7 +1071,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     /groups
     /88b65781e4amz6745axx0912
     /type
-    /Revel?fields=id|dueDate|availabilityDate
+    /group?fields=id|dueDate|availabilityDate
     |updatable|locked
     |pointsPossible|version
  
