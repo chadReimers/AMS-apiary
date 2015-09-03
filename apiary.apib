@@ -294,28 +294,29 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 
 + Response 201 (application/json)
 
-                   {
+                           {
+            "id": 2000000000001,
             "locked": false,
             "version": "1",
             "groups": [],
-            "contextId": "2001",
-            "contextType": "course",
-            "title": "Test course TOC medium",
-            "bookId": "book124",
             "structureNodes": [
                 {
+                    "id": 2000000001718,
                     "parentId": 0,
                     "hidden": false,
                     "optional": false,
                     "level": 0,
                     "sequenceNumber": 0,
                     "learningResource": {
-                        "resourceId": 2000000000000,
+                        "id": 2000000001718,
                         "contentVersion": 1,
                         "assignments": [
                             {
+                                "id": 2000000001719,
                                 "activities": [
                                     {
+                                        "id": 2000000001720,
+                                        "sequenceNumber": 1,
                                         "activityId": "http://blah.blah.com/blah/blah/biglongguid12412",
                                         "title": "activity 3"
                                     }
@@ -323,7 +324,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                                 "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12407",
                                 "category": {
                                     "title": "HW",
-                                    "contextId": "2000",
+                                    "contextId": "2002",
                                     "weight": 10
                                 },
                                 "title": "assignment 2"
@@ -334,18 +335,19 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                         "metadata": {},
                         "playerSettings": {},
                         "bookId": "book124",
-                        "seqNbr": "",
+                        "seqNbr": "1",
                         "title": "chapter 1"
                     },
                     "children": [
                         {
-                            "parentId": 2000000000014,
+                            "id": 2000000001721,
+                            "parentId": 2000000001718,
                             "hidden": false,
                             "optional": false,
-                            "level": 1,
+                            "level": 0,
                             "sequenceNumber": 0,
                             "learningResource": {
-                                "resourceId": 2000000000002,
+                                "id": 2000000001721,
                                 "contentVersion": 1,
                                 "assignments": [],
                                 "learningAids": [],
@@ -353,27 +355,33 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                                 "metadata": {},
                                 "playerSettings": {},
                                 "bookId": "book124",
-                                "seqNbr": "",
+                                "seqNbr": "1",
                                 "title": "module 1"
                             },
                             "children": [
                                 {
-                                    "parentId": 2000000000016,
+                                    "id": 2000000001722,
+                                    "parentId": 2000000001721,
                                     "hidden": false,
                                     "optional": false,
-                                    "level": 2,
+                                    "level": 0,
                                     "sequenceNumber": 0,
                                     "learningResource": {
-                                        "resourceId": 2000000000005,
+                                        "id": 2000000001722,
                                         "contentVersion": 1,
                                         "assignments": [
                                             {
+                                                "id": 2000000001723,
                                                 "activities": [
                                                     {
+                                                        "id": 2000000001724,
+                                                        "sequenceNumber": 1,
                                                         "activityId": "http://blah.blah.com/blah/blah/biglongguid12410",
                                                         "title": "activity 1"
                                                     },
                                                     {
+                                                        "id": 2000000001725,
+                                                        "sequenceNumber": 1,
                                                         "activityId": "http://blah.blah.com/blah/blah/biglongguid12411",
                                                         "title": "activity 2"
                                                     }
@@ -381,7 +389,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                                                 "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12406",
                                                 "category": {
                                                     "title": "HW1",
-                                                    "contextId": "2000",
+                                                    "contextId": "2002",
                                                     "weight": 10
                                                 },
                                                 "title": "assignment 1"
@@ -392,7 +400,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                                         "metadata": {},
                                         "playerSettings": {},
                                         "bookId": "book124",
-                                        "seqNbr": "",
+                                        "seqNbr": "1",
                                         "title": "section 1"
                                     },
                                     "children": []
@@ -402,13 +410,14 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                     ]
                 },
                 {
+                    "id": 2000000001726,
                     "parentId": 0,
                     "hidden": false,
                     "optional": false,
                     "level": 0,
                     "sequenceNumber": 1,
                     "learningResource": {
-                        "resourceId": 2000000000001,
+                        "id": 2000000001726,
                         "contentVersion": 1,
                         "assignments": [],
                         "learningAids": [],
@@ -416,18 +425,19 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                         "metadata": {},
                         "playerSettings": {},
                         "bookId": "book124",
-                        "seqNbr": "",
+                        "seqNbr": "1",
                         "title": "chapter 2"
                     },
                     "children": [
                         {
-                            "parentId": 2000000000015,
+                            "id": 2000000001727,
+                            "parentId": 2000000001726,
                             "hidden": false,
                             "optional": false,
-                            "level": 1,
+                            "level": 0,
                             "sequenceNumber": 0,
                             "learningResource": {
-                                "resourceId": 2000000000003,
+                                "id": 2000000001727,
                                 "contentVersion": 1,
                                 "assignments": [],
                                 "learningAids": [],
@@ -435,24 +445,28 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                                 "metadata": {},
                                 "playerSettings": {},
                                 "bookId": "book124",
-                                "seqNbr": "",
+                                "seqNbr": "1",
                                 "title": "module 2"
                             },
                             "children": []
                         },
                         {
-                            "parentId": 2000000000015,
+                            "id": 2000000001728,
+                            "parentId": 2000000001726,
                             "hidden": false,
                             "optional": false,
-                            "level": 1,
+                            "level": 0,
                             "sequenceNumber": 1,
                             "learningResource": {
-                                "resourceId": 2000000000004,
+                                "id": 2000000001728,
                                 "contentVersion": 1,
                                 "assignments": [
                                     {
+                                        "id": 2000000001729,
                                         "activities": [
                                             {
+                                                "id": 2000000001730,
+                                                "sequenceNumber": 1,
                                                 "activityId": "http://blah.blah.com/blah/blah/biglongguid12413",
                                                 "title": "activity 4"
                                             }
@@ -460,17 +474,18 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                                         "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12408",
                                         "category": {
                                             "title": "HW3",
-                                            "contextId": "2000",
+                                            "contextId": "2002",
                                             "weight": 10
                                         },
                                         "title": "assignment 3"
                                     },
                                     {
+                                        "id": 2000000001731,
                                         "activities": [],
                                         "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12409",
                                         "category": {
                                             "title": "HW4",
-                                            "contextId": "2000",
+                                            "contextId": "2002",
                                             "weight": 10
                                         },
                                         "title": "assignment 4"
@@ -481,14 +496,18 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                                 "metadata": {},
                                 "playerSettings": {},
                                 "bookId": "book124",
-                                "seqNbr": "",
+                                "seqNbr": "1",
                                 "title": "module 3"
                             },
                             "children": []
                         }
                     ]
                 }
-            ]
+            ],
+            "contextId": "2001",
+            "contextType": "course",
+            "title": "Test course TOC medium",
+            "bookId": "book124"
         }
 
 + Response 404
