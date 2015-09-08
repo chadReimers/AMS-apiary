@@ -1267,6 +1267,44 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 + Response 403
     [Authorization Failed Error][]
 
+## Delete Assignment group tree by given course id and array of assignment group id's. [/learningcontexts/{contextType}/{contextId}/groups/{externalId,externalId1,externalId2}]
+### Delete an Assignment group tree by given course id and array of assignment group id's [DELETE] 
+    
++ Parameters
+    + contextType (required,string,`course`) ... /learningcontexts/course
+    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
+    contextId is the courseId from the related course context       
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    + externalId (required,string,`aacda414-4a97-11e5-885d-feff819cdc9f`) 
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+    /bacda414-4a97-11e5-885d-feff819cdc9f
+    + externalId1 (required,string,`bacda414-4a97-11e5-885d-feff819cdc9f`)
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+    /bacda414-4a97-11e5-885d-feff819cdc9f,aacda414-4a97-11e5-885d-feff819cdc9f
+    + externalId2 (required,string,`cacda414-4a97-11e5-885d-feff819cdc9f`)
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+    /bacda414-4a97-11e5-885d-feff819cdc9f,aacda414-4a97-11e5-885d-feff819cdc9f,cacda414-4a97-11e5-885d-feff819cdc9f
+    
+
++ Response 204
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
+
+
 ## Retrieve Assignment Group Node critical attributes by course id , group id and type [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/type/{type}{?fields}]
 ### Retrieve Assignment Group Node critical attributes by given course id , group id and type /learningcontexts/{contextType}/{contextId}/groups/{groupId}/type/{type}{?fields} [GET]
 
