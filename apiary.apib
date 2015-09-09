@@ -1107,6 +1107,45 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 + Response 403
     [Authorization Failed Error][]
 
+### Delete an Assignment group tree by given course id and array of assignment group id's [DELETE] 
+    
++ Parameters
+    + contextType (required,string,`course`) ... /learningcontexts/course
+    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
+    contextId is the courseId from the related course context       
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+     Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+
++ Request
+    + Headers
+    
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json
+
+
+    + Body
+    
+             {
+                aacda414-4a97-11e5-885d-feff819cdc9f,
+                bacda414-4a97-11e5-885d-feff819cdc9f,
+                cacda414-4a97-11e5-885d-feff819cdc9f,
+                dacda414-4a97-11e5-885d-feff819cdc9f
+            }
++ Response 204
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
+
 
 ## Retrieve Assignment Group [/learningcontexts/{contextType}/{contextId}/groups/{externalId}]
 ### Retrieve Assignment Group  [GET] 
@@ -1266,47 +1305,6 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 
 + Response 403
     [Authorization Failed Error][]
-
-
-### Delete an Assignment group tree by given course id and array of assignment group id's [DELETE] 
-    
-+ Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/course
-    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
-    contextId is the courseId from the related course context       
-    Ex : /learningcontexts/course
-    /48d00f78-4a97-11e5-885d-feff819cdc9f 
-     Ex : /learningcontexts/course
-    /48d00f78-4a97-11e5-885d-feff819cdc9f 
-    /groups
-
-+ Request
-    + Headers
-    
-            Correlation-Id : UUID
-            X-Authorization: PI Auth Token
-            accept : application/json
-
-
-    + Body
-    
-             {
-                aacda414-4a97-11e5-885d-feff819cdc9f,
-                bacda414-4a97-11e5-885d-feff819cdc9f,
-                cacda414-4a97-11e5-885d-feff819cdc9f,
-                dacda414-4a97-11e5-885d-feff819cdc9f
-            }
-+ Response 204
-
-+ Response 404
-    [Not Found Error][]
-
-+ Response 401
-    [Authentication Required Error][]
-
-+ Response 403
-    [Authorization Failed Error][]
-
 
 ## Retrieve Assignment Group Node critical attributes by course id , group id and type [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/type/{type}{?fields}]
 ### Retrieve Assignment Group Node critical attributes by given course id , group id and type /learningcontexts/{contextType}/{contextId}/groups/{groupId}/type/{type}{?fields} [GET]
