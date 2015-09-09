@@ -2203,8 +2203,8 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     [Authorization Failed Error][]
 
 
-## Retrieve assignment groups by course id and  assignment group external id  [/learningcontexts/gradebook/{contextType}/{contextId}/groups/{externalId}]
-### Retrieve assignment groups by given course id and assignment group external id   /learningcontexts/gradebook/{contextType}/{contextId}/groups/{externalId} [GET]
+## Retrieve assignment groups by course id and  assignment group external id  [/learningcontexts/{contextType}/{contextId}/groups/{externalId}?expand={boolean}]
+### Retrieve assignment groups by given course id and assignment group external id   /learningcontexts/{contextType}/{contextId}/groups/{externalId}?expand={boolean} [GET]
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts/gradebook
     /course
@@ -2212,6 +2212,11 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     + externalId (required, string, `fda3a928-4781-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/gradebook
+    /course
+    /4072f6d4-4843-11e5-a151-feff819cdc9f
+    /groups
+    /fda3a928-4781-11e5-a151-feff819cdc9f
+    + boolean (optional, string, `true,false`)... Ex: /learningcontexts/gradebook
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /groups
