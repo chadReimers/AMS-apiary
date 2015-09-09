@@ -1150,7 +1150,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 ## Retrieve Assignment Group [/learningcontexts/{contextType}/{contextId}/groups/{externalId}]
 ### Retrieve Assignment Group  [GET] 
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/course
+    + contextType (required,string,`course,group`) ... /learningcontexts/course
     + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
     contextId is the courseId from the related course context       
     Ex : /learningcontexts/course
@@ -1214,7 +1214,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 
 ### Update Assignment Group  [PUT] 
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/course
+    + contextType (required,string,`course,group`) ... /learningcontexts/course
     + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) ... 
     contextId is the courseId from the related course context       
     Ex : /learningcontexts/course
@@ -1278,7 +1278,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 ### Delete an Assignment Group [DELETE] 
     
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/course
+    + contextType (required,string,`course,group`) ... /learningcontexts/course
     + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
     contextId is the courseId from the related course context       
     Ex : /learningcontexts/course
@@ -1665,15 +1665,15 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 
 # Group Gradebook specific routes
 
-## Retrieve assignment by course id and  asignment id [/learningcontexts/gradebook/{contextType}/{contextId}/assignments/{assignmentId}]
-### Retrieve assignment by given course id and assignment id /learningcontexts/gradebook/{contextType}/{contextId}/assignments/{assignmentId} [GET]
+## Retrieve assignment by course id and  asignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}]
+### Retrieve assignment by given course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId} [GET]
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/gradebook
+    + contextType (required,string,`course`) ... /learningcontexts/
     /course
-    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/gradebook
+    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
-    + assignmentId (required, string, `4072f9e0-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/gradebook
+    + assignmentId (required, string, `4072f9e0-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /assignments
@@ -1713,15 +1713,15 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     [Authorization Failed Error][]   
           
 
-## Retrieve assignment groups by course id , order by due date expand assignments [/learningcontexts/gradebook/{contextType}/{contextId}/groups?expand={filter}]
-### Retrieve assignment groups by given course id , order by due date expand assignments /learningcontexts/gradebook/{contextType}/{contextId}/groups?expand={filter} [GET]
+## Retrieve assignment groups by course id , order by due date expand assignments [/learningcontexts/{contextType}/{contextId}/groups?expand={filter}]
+### Retrieve assignment groups by given course id , order by due date expand assignments /learningcontexts/{contextType}/{contextId}/groups?expand={filter} [GET]
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/gradebook
+    + contextType (required,string,`course`) ... /learningcontexts/
     /course
-    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/gradebook
+    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
-    + filter (optional, string, `assignments`)... Ex: /learningcontexts/gradebook
+    + filter (optional, string, `assignments`)... Ex: /learningcontexts/
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /groups
@@ -1884,12 +1884,12 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     [Authorization Failed Error][] 
 
 
-## Retrieve assignments by course id , order by category, order by due date,order by level,order by sequence number [/learningcontexts/gradebook/{contextType}/{contextId}/assignments]
-### Retrieve assignments by given course id , order by category,order by due date,order by level,order by sequence number /learningcontexts/gradebook/{contextType}/{contextId}/assignments [GET]
+## Retrieve assignments by course id , order by category, order by due date,order by level,order by sequence number [/learningcontexts/{contextType}/{contextId}/assignments]
+### Retrieve assignments by given course id , order by category,order by due date,order by level,order by sequence number /learningcontexts/{contextType}/{contextId}/assignments [GET]
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/gradebook
+    + contextType (required,string,`course`) ... /learningcontexts/
     /course
-    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/gradebook
+    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /assignments
