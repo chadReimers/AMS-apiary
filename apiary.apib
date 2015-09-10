@@ -1988,9 +1988,9 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 ## Retrieve assignments by course id , order by category, order by due date,order by level,order by sequence number [/learningcontexts/{contextType}/{contextId}/assignments]
 ### Retrieve assignments by given course id , order by category,order by due date,order by level,order by sequence number /learningcontexts/{contextType}/{contextId}/assignments [GET]
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/
+    + contextType (required,string,`course`) ... /learningcontexts
     /course
-    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/
+    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /assignments
@@ -2151,17 +2151,17 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 ## Retrieve assignment groups by course id and  assignment group external id  [/learningcontexts/{contextType}/{contextId}/groups/{externalId}?expand={fulltree}]
 ### Retrieve assignment groups by given course id and assignment group external id   /learningcontexts/{contextType}/{contextId}/groups/{externalId}?expand={fulltree} [GET]
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/
+    + contextType (required,string,`course`) ... /learningcontexts
     /course
-    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/
+    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
-    + externalId (required, string, `fda3a928-4781-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts/
+    + externalId (required, string, `fda3a928-4781-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /groups
     /fda3a928-4781-11e5-a151-feff819cdc9f
-    + fulltree (optional, string, `true,false`)... Ex: /learningcontexts/
+    + fulltree (optional, boolean, `If not specified default value is false`)... Ex: /learningcontexts
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /groups
