@@ -1108,6 +1108,79 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 + Response 403
     [Authorization Failed Error][]
 
+### Retrieve assignment groups by course id , order by due date 
+
++ Parameters
+    + contextType (required,string,`course`) ... /learningcontexts/course
+    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
+    contextId is the courseId from the related course context       
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+     Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+
++ Request
+    + Headers
+    
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id:UUID
+            Access-Control-Allow-Origin:*
+    + Body
+    
+            {
+                "learningContextId": 2000000000002,
+                "ctrldAcsActivity": true,
+                "released": true,
+                "updatable": true,
+                "availabilityDate": 1440440597000,
+                "createdAt": 1438408800000,
+                "dueDate": 1440440597000,
+                "updatedAt": 1441232046000,
+                "pointsPossible": 123,
+                "ungradablePoints": 12,
+                "treeVersion": 1,
+                "version": 1,
+                "states": [],
+                "structureNodes": [],
+                "lookupMap": {},
+                "metadata": {},
+                "liveAssessments": [
+                    "http: //www.amad_2",
+                    "http: //www.amstea_1"
+                ],
+                "sources": [
+                    "http: //www.amad_2",
+                    "http: //www.amstea_1"
+                ],
+                "backgroundUri": "testmyBackgroundUrl",
+                "bookId": "7890",
+                "description": "testMyDescription",
+                "externalId": "bacda414-4a97-11e5-885d-feff819cdc9f",
+                "launchUri": "MyaaLaurai",
+                "note": "MyNote",
+                "noteAuthor": "testMyNoteAuthor",
+                "thumbnailUri": "testMyThumbUri",
+                "title": "testMyTitle",
+                "type": "group"
+            }
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
+
+
 ### Delete an Assignment group tree by given course id and array of assignment group id's [DELETE] 
     
 + Parameters
