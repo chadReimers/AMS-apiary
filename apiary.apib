@@ -1829,19 +1829,16 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     [Authorization Failed Error][]   
           
 
-## Retrieve assignment groups by course id , order by due date expand assignments [/learningcontexts/{contextType}/{contextId}/groups?expand={filter}]
-### Retrieve assignment groups by given course id , order by due date expand assignments /learningcontexts/{contextType}/{contextId}/groups?expand={filter} [GET]
+## Retrieve list of assignment and dueDate information by given course id , order by due date expand assignments [/learningcontexts/{contextType}/{contextId}/assignments?sort=dueDate]
+### Retrieve list of assignment and dueDate information by given course id , order by due date expand assignments [GET]
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts
     /course
     + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
-    + filter (optional, string, `assignments`)... Ex: /learningcontexts
-    /course
-    /4072f6d4-4843-11e5-a151-feff819cdc9f
-    /groups
-    ?expand=assignments
+    /assignments
+    ?sort=dueDate
     
 + Request
     + Headers
@@ -1859,207 +1856,63 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 
     + Body
             
-                    {
-                        "groups": [
-                            {
-                                "id": 5,
-                                "ctrldAcsActivity": true,
-                                "released": true,
-                                "updatable": true,
-                                "availabilityDate": "2015-02-06T21:19:25.000Z",
-                                "createdAt": "2015-01-06T21:19:25.000Z",
-                                "dueDate": "2015-03-06T21:19:25.000Z",
-                                "updatedAt": "2015-01-10T21:19:25.000Z",
-                                "pointsPossible": 100,
-                                "ungradablePoints": 0,
-                                "treeVersion": 1,
-                                "version": 1,
-                                "states": [
-                                    {
-                                        "type": "RELEASED",
-                                        "updatedAt": 1440108277479,
-                                        "updatedBy": "Bubba"
-                                    }
-                                ],
-                                "lookupMap": {},
-                                "metadata": {
-                                    "anotherAttribute": "anotherValue",
-                                    "someAttribute": "someValue"
-                                },
-                                "liveAssessments": [
-                                    "http://www.amstest.com/assessment_2",
-                                    "http://www.amstest.com/assessment_1"
-                                ],
-                                "sources": [
-                                    "http://www.amstest.com/source_1",
-                                    "http://www.amstest.com/source_2"
-                                ],
-                                "backgroundUri": "http://www.amstest.com/bogus",
-                                "bookId": "4072fc7e-4843-11e5-a151-feff819cdc9f",
-                                "description": "TEST TEST TEST",
-                                "externalId": "fda3a928-4781-11e5-a151-feff819cdc9f",
-                                "launchUri": "http://www.amstest.com/launch",
-                                "note": "Note: This is a test.",
-                                "noteAuthor": "Bubba",
-                                "thumbnailUri": "http://www.amstest.com/thumbnail",
-                                "title": "Test Group",
-                                "type": "Test",
-                                "structureNodes": [
-                                    {
-                                        "parentId": 0,
-                                        "hidden": false,
-                                        "optional": false,
-                                        "level": 0,
-                                        "sequenceNumber": 0,
-                                        "learningResource": {
-                                            "assetType": "chapter",
-                                            "hidden": false,
-                                            "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/bkm01_introduction.xhtml",
-                                            "itemId": "aaab19fd4547d01b8085cb04034117d165aff9161",
-                                            "pointsPossible": 0,
-                                            "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/bkm01_introduction.xhtml",
-                                            "thumbnailUrl": "https://revel-stg.pearson.com/eps/sanvan/api/item/1b3b9690-8aef-4ae7-9820-9d6453ccfdd6/1/file/images/default_chapter_thumbnail.jpg",
-                                            "level": "1",
-                                            "seqNbr": "",
-                                            "excluded": false,
-                                            "released": false,
-                                            "assignments": [
-                                                {
-                                                    "id": 1365989375,
-                                                    "gradable": false,
-                                                    "hidden": false,
-                                                    "locked": false,
-                                                    "pointsPossible": 50,
-                                                    "ungradablePoints": 10,
-                                                    "activities": [
-                                                        {
-                                                            "id": -403393690,
-                                                            "excluded": false,
-                                                            "hidden": true,
-                                                            "pointsPossible": 50,
-                                                            "ungradablePoints": 1,
-                                                            "sequenceNumber": 0,
-                                                            "activityId": "26582211-79c4-40b2-9f93-b2c76e7636e9",
-                                                            "itemUri": "http://www.bogus.com/item",
-                                                            "originalActivityId": "d0c2ed11-6a2c-4e5f-b3cd-eed6eff43ed9",
-                                                            "subType": "Test Sub Type",
-                                                            "shortTitle": "Test Short Title",
-                                                            "title": "Test Activity",
-                                                            "type": "TEST"
-                                                        }
-                                                    ],
-                                                    "assignmentId": "6c5aa2d4-d6c7-4be8-b5e1-26db6dd47e96",
-                                                    "category": {
-                                                        "title": "HW",
-                                                        "contextId": "1223",
-                                                        "weight": 10
-                                                    },
-                                                    "assignmentPartId": "422aa99b-44b9-4751-97a8-260d67bff911",
-                                                    "bookAssignmentId": "512f87e1-6d62-4abf-b8eb-3ef6a5586d05",
-                                                    "itemUri": "http://www.amstest.com.item",
-                                                    "newAssignmentId": "b1de9ebf-53c0-459d-bd4f-cd2c8dce3ce9",
-                                                    "parentAssignmentId": "ebc54332-463a-4d29-b409-817b28c6b9f9",
-                                                    "shortTitle": "testShortT",
-                                                    "source": "testsource",
-                                                    "subType": "testsubtype",
-                                                    "title": "Test Assignment",
-                                                    "type": "testtype"
-                                                },
-                                                {
-                                                    "id": 1365989375,
-                                                    "gradable": false,
-                                                    "hidden": false,
-                                                    "locked": false,
-                                                    "pointsPossible": 50,
-                                                    "ungradablePoints": 10,
-                                                    "activities": [
-                                                        {
-                                                            "id": -403393690,
-                                                            "excluded": false,
-                                                            "hidden": true,
-                                                            "pointsPossible": 50,
-                                                            "ungradablePoints": 1,
-                                                            "sequenceNumber": 0,
-                                                            "activityId": "26582211-79c4-40b2-9f93-b2c76e7636e9",
-                                                            "itemUri": "http://www.bogus.com/item",
-                                                            "originalActivityId": "d0c2ed11-6a2c-4e5f-b3cd-eed6eff43ed9",
-                                                            "subType": "Test Sub Type",
-                                                            "shortTitle": "Test Short Title",
-                                                            "title": "Test Activity",
-                                                            "type": "TEST"
-                                                        }
-                                                    ],
-                                                    "assignmentId": "6c5aa2d4-d6c7-4be8-b5e1-26db6dd47e96",
-                                                    "category": {
-                                                        "title": "HW",
-                                                        "contextId": "1223",
-                                                        "weight": 10
-                                                    },
-                                                    "assignmentPartId": "422aa99b-44b9-4751-97a8-260d67bff911",
-                                                    "bookAssignmentId": "512f87e1-6d62-4abf-b8eb-3ef6a5586d05",
-                                                    "itemUri": "http://www.amstest.com.item",
-                                                    "newAssignmentId": "b1de9ebf-53c0-459d-bd4f-cd2c8dce3ce9",
-                                                    "parentAssignmentId": "ebc54332-463a-4d29-b409-817b28c6b9f9",
-                                                    "shortTitle": "testShortT",
-                                                    "source": "testsource",
-                                                    "subType": "testsubtype",
-                                                    "title": "Test Assignment",
-                                                    "type": "testtype"
-                                                },
-                                                {
-                                                    "id": 1365989375,
-                                                    "gradable": false,
-                                                    "hidden": false,
-                                                    "locked": false,
-                                                    "pointsPossible": 50,
-                                                    "ungradablePoints": 10,
-                                                    "activities": [
-                                                        {
-                                                            "id": -403393690,
-                                                            "excluded": false,
-                                                            "hidden": true,
-                                                            "pointsPossible": 50,
-                                                            "ungradablePoints": 1,
-                                                            "sequenceNumber": 0,
-                                                            "activityId": "26582211-79c4-40b2-9f93-b2c76e7636e9",
-                                                            "itemUri": "http://www.bogus.com/item",
-                                                            "originalActivityId": "d0c2ed11-6a2c-4e5f-b3cd-eed6eff43ed9",
-                                                            "subType": "Test Sub Type",
-                                                            "shortTitle": "Test Short Title",
-                                                            "title": "Test Activity",
-                                                            "type": "TEST"
-                                                        }
-                                                    ],
-                                                    "assignmentId": "6c5aa2d4-d6c7-4be8-b5e1-26db6dd47e96",
-                                                    "category": {
-                                                        "title": "HW",
-                                                        "contextId": "1223",
-                                                        "weight": 10
-                                                    },
-                                                    "assignmentPartId": "422aa99b-44b9-4751-97a8-260d67bff911",
-                                                    "bookAssignmentId": "512f87e1-6d62-4abf-b8eb-3ef6a5586d05",
-                                                    "itemUri": "http://www.amstest.com.item",
-                                                    "newAssignmentId": "b1de9ebf-53c0-459d-bd4f-cd2c8dce3ce9",
-                                                    "parentAssignmentId": "ebc54332-463a-4d29-b409-817b28c6b9f9",
-                                                    "shortTitle": "testShortT",
-                                                    "source": "testsource",
-                                                    "subType": "testsubtype",
-                                                    "title": "Test Assignment",
-                                                    "type": "testtype"
-                                                }
-                                            ],
-                                            "learningAids": [],
-                                            "learningObjectives": [],
-                                            "metadata": {},
-                                            "playerSettings": {},
-                                            "bookId": "book124",
-                                            "title": "chapter 1"
-                                        }
-                                    }
-                                ]
-                            }
-                        ]
-                    }
+            [
+             {
+                 "dueDate": "2015-08-24T18:23:17.000Z",
+                 "id": 1000000002890,
+                    "gradable": true,
+                    "hidden": false,
+                    "locked": false,
+                    "pointsPossible": 0,
+                    "ungradablePoints": 0,
+                    "assignmentId": "222345",
+                    "category": {
+                        "title": "homework1",
+                        "contextId": "22",
+                        "weight": 0.5
+                    },
+                    "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c3...",
+                    "source": "PAF",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context"
+                },
+                {
+                    "dueDate": "2015-08-24T18:23:17.000Z",
+                    "id": 1000000002892,
+                    "gradable": true,
+                    "hidden": false,
+                    "locked": false,
+                    "pointsPossible": 0,
+                    "ungradablePoints": 0,
+                    "assignmentId": "12567",
+                    "category": {
+                        "title": "quiz",
+                        "contextId": "22",
+                        "weight": 0.5
+                    },
+                    "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c3...",
+                    "source": "PAF",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context"
+                },
+                {
+                    "dueDate": "2015-08-24T18:23:17.000Z",
+                    "id": 1000000002894,
+                    "gradable": true,
+                    "hidden": false,
+                    "locked": false,
+                    "pointsPossible": 0,
+                    "ungradablePoints": 0,
+                    "assignmentId": "7891",
+                    "category": {
+                        "title": "title1",
+                        "contextId": "22",
+                        "weight": 0.5
+                    },
+                    "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c3...",
+                    "source": "PAF",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context"
+                }
+            ]
+        
 + Response 404
     [Not Found Error][]
 + Response 401
