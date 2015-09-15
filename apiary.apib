@@ -165,7 +165,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 
 ## Create TOC Fulltree [/learningContexts]
 
-### Create TOC Fulltree [POST]
+### Create TOC Fulltree Request and Response [POST]
 
 + Request (application/json)
 
@@ -1121,6 +1121,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
      Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
+    
 
 + Request
     + Headers
@@ -1153,7 +1154,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     [Authorization Failed Error][]
 
 
-## Retrieve Assignment Groups by course id order by due date [/learningcontexts/{contextType}/{contextId}/groups?sort=dueDate]
+## Retrieve Assignment Groups by course id order by due date [/learningcontexts/{contextType}/{contextId}/groups?sort=dueDate&type="Revel"]
 ### Retrieve Assignment Groups by course id order by due date [GET]
 
 + Parameters
@@ -1169,7 +1170,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
-    ?sort=dueDate
+    ?sort=dueDate&type="Revel"
 
 + Request
     + Headers
@@ -1214,7 +1215,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
                 "note": "MyNote",
                 "noteAuthor": "testMyNoteAuthor",
                 "thumbnailUri": "testMyThumbUri",
-                "title": "testMyTitle",
+                "title": "Revel",
                 "type": "group"
             }
 + Response 204
