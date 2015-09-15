@@ -103,6 +103,432 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 + Response 403
     [Authorization Failed Error][]  
 
+### Fulltree Request and Response [POST]
+
++ Request (application/json)
+
+                   {
+            "locked": false,
+            "version": "1",
+            "groups": [],
+            "contextId": "2003",
+            "contextType": "course",
+            "title": "Test course TOC medium",
+            "bookId": "book124",
+            "structureNodes": [
+                {
+                    "parentId": 0,
+                    "hidden": false,
+                    "optional": false,
+                    "level": 0,
+                    "sequenceNumber": 0,
+                    "learningResource": {
+                        "resourceId": 2000000000000,
+                        "contentVersion": 1,
+                        "assignments": [
+                            {
+                                "activities": [
+                                    {
+                                        "activityId": "http://blah.blah.com/blah/blah/biglongguid12412",
+                                        "title": "activity 3"
+                                    }
+                                ],
+                                "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12407",
+                                "category": {
+                                    "title": "HW",
+                                    "contextId": "2000",
+                                    "weight": 10
+                                },
+                                "title": "assignment 2"
+                            }
+                        ],
+                        "learningAids": [],
+                        "learningObjectives": [],
+                        "metadata": {},
+                        "playerSettings": {},
+                        "bookId": "book124",
+                        "seqNbr": "",
+                        "title": "chapter 1"
+                    },
+                    "children": [
+                        {
+                            "parentId": 2000000000014,
+                            "hidden": false,
+                            "optional": false,
+                            "level": 1,
+                            "sequenceNumber": 0,
+                            "learningResource": {
+                                "resourceId": 2000000000002,
+                                "contentVersion": 1,
+                                "assignments": [],
+                                "learningAids": [],
+                                "learningObjectives": [],
+                                "metadata": {},
+                                "playerSettings": {},
+                                "bookId": "book124",
+                                "seqNbr": "",
+                                "title": "module 1"
+                            },
+                            "children": [
+                                {
+                                    "parentId": 2000000000016,
+                                    "hidden": false,
+                                    "optional": false,
+                                    "level": 2,
+                                    "sequenceNumber": 0,
+                                    "learningResource": {
+                                        "resourceId": 2000000000005,
+                                        "contentVersion": 1,
+                                        "assignments": [
+                                            {
+                                                "activities": [
+                                                    {
+                                                        "activityId": "http://blah.blah.com/blah/blah/biglongguid12410",
+                                                        "title": "activity 1"
+                                                    },
+                                                    {
+                                                        "activityId": "http://blah.blah.com/blah/blah/biglongguid12411",
+                                                        "title": "activity 2"
+                                                    }
+                                                ],
+                                                "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12406",
+                                                "category": {
+                                                    "title": "HW1",
+                                                    "contextId": "2000",
+                                                    "weight": 10
+                                                },
+                                                "title": "assignment 1"
+                                            }
+                                        ],
+                                        "learningAids": [],
+                                        "learningObjectives": [],
+                                        "metadata": {},
+                                        "playerSettings": {},
+                                        "bookId": "book124",
+                                        "seqNbr": "",
+                                        "title": "section 1"
+                                    },
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "parentId": 0,
+                    "hidden": false,
+                    "optional": false,
+                    "level": 0,
+                    "sequenceNumber": 1,
+                    "learningResource": {
+                        "resourceId": 2000000000001,
+                        "contentVersion": 1,
+                        "assignments": [],
+                        "learningAids": [],
+                        "learningObjectives": [],
+                        "metadata": {},
+                        "playerSettings": {},
+                        "bookId": "book124",
+                        "seqNbr": "",
+                        "title": "chapter 2"
+                    },
+                    "children": [
+                        {
+                            "parentId": 2000000000015,
+                            "hidden": false,
+                            "optional": false,
+                            "level": 1,
+                            "sequenceNumber": 0,
+                            "learningResource": {
+                                "resourceId": 2000000000003,
+                                "contentVersion": 1,
+                                "assignments": [],
+                                "learningAids": [],
+                                "learningObjectives": [],
+                                "metadata": {},
+                                "playerSettings": {},
+                                "bookId": "book124",
+                                "seqNbr": "",
+                                "title": "module 2"
+                            },
+                            "children": []
+                        },
+                        {
+                            "parentId": 2000000000015,
+                            "hidden": false,
+                            "optional": false,
+                            "level": 1,
+                            "sequenceNumber": 1,
+                            "learningResource": {
+                                "resourceId": 2000000000004,
+                                "contentVersion": 1,
+                                "assignments": [
+                                    {
+                                        "activities": [
+                                            {
+                                                "activityId": "http://blah.blah.com/blah/blah/biglongguid12413",
+                                                "title": "activity 4"
+                                            }
+                                        ],
+                                        "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12408",
+                                        "category": {
+                                            "title": "HW3",
+                                            "contextId": "2000",
+                                            "weight": 10
+                                        },
+                                        "title": "assignment 3"
+                                    },
+                                    {
+                                        "activities": [],
+                                        "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12409",
+                                        "category": {
+                                            "title": "HW4",
+                                            "contextId": "2000",
+                                            "weight": 10
+                                        },
+                                        "title": "assignment 4"
+                                    }
+                                ],
+                                "learningAids": [],
+                                "learningObjectives": [],
+                                "metadata": {},
+                                "playerSettings": {},
+                                "bookId": "book124",
+                                "seqNbr": "",
+                                "title": "module 3"
+                            },
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+
++ Response 201 (application/json)
+
+                                   {
+            "id": 1000000000008,
+            "locked": false,
+            "version": "1",
+            "groups": [],
+            "structureNodes": [
+                {
+                    "id": 1000000005193,
+                    "parentId": 0,
+                    "hidden": false,
+                    "optional": false,
+                    "level": 0,
+                    "sequenceNumber": 0,
+                    "learningResource": {
+                        "id": 1000000005193,
+                        "contentVersion": 1,
+                        "assignments": [
+                            {
+                                "id": 1000000005194,
+                                "activities": [
+                                    {
+                                        "id": 1000000005195,
+                                        "sequenceNumber": 1,
+                                        "activityId": "http://blah.blah.com/blah/blah/biglongguid12412",
+                                        "title": "activity 3"
+                                    }
+                                ],
+                                "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12407",
+                                "category": {
+                                    "title": "HW",
+                                    "contextId": "2003",
+                                    "weight": 10
+                                },
+                                "title": "assignment 2"
+                            }
+                        ],
+                        "learningAids": [],
+                        "learningObjectives": [],
+                        "metadata": {},
+                        "playerSettings": {},
+                        "bookId": "book124",
+                        "seqNbr": "1",
+                        "title": "chapter 1"
+                    },
+                    "children": [
+                        {
+                            "id": 1000000005196,
+                            "parentId": 1000000005193,
+                            "hidden": false,
+                            "optional": false,
+                            "level": 0,
+                            "sequenceNumber": 0,
+                            "learningResource": {
+                                "id": 1000000005196,
+                                "contentVersion": 1,
+                                "assignments": [],
+                                "learningAids": [],
+                                "learningObjectives": [],
+                                "metadata": {},
+                                "playerSettings": {},
+                                "bookId": "book124",
+                                "seqNbr": "1",
+                                "title": "module 1"
+                            },
+                            "children": [
+                                {
+                                    "id": 1000000005197,
+                                    "parentId": 1000000005196,
+                                    "hidden": false,
+                                    "optional": false,
+                                    "level": 0,
+                                    "sequenceNumber": 0,
+                                    "learningResource": {
+                                        "id": 1000000005197,
+                                        "contentVersion": 1,
+                                        "assignments": [
+                                            {
+                                                "id": 1000000005198,
+                                                "activities": [
+                                                    {
+                                                        "id": 1000000005199,
+                                                        "sequenceNumber": 1,
+                                                        "activityId": "http://blah.blah.com/blah/blah/biglongguid12410",
+                                                        "title": "activity 1"
+                                                    },
+                                                    {
+                                                        "id": 1000000005200,
+                                                        "sequenceNumber": 1,
+                                                        "activityId": "http://blah.blah.com/blah/blah/biglongguid12411",
+                                                        "title": "activity 2"
+                                                    }
+                                                ],
+                                                "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12406",
+                                                "category": {
+                                                    "title": "HW1",
+                                                    "contextId": "2003",
+                                                    "weight": 10
+                                                },
+                                                "title": "assignment 1"
+                                            }
+                                        ],
+                                        "learningAids": [],
+                                        "learningObjectives": [],
+                                        "metadata": {},
+                                        "playerSettings": {},
+                                        "bookId": "book124",
+                                        "seqNbr": "1",
+                                        "title": "section 1"
+                                    },
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 1000000005201,
+                    "parentId": 0,
+                    "hidden": false,
+                    "optional": false,
+                    "level": 0,
+                    "sequenceNumber": 1,
+                    "learningResource": {
+                        "id": 1000000005201,
+                        "contentVersion": 1,
+                        "assignments": [],
+                        "learningAids": [],
+                        "learningObjectives": [],
+                        "metadata": {},
+                        "playerSettings": {},
+                        "bookId": "book124",
+                        "seqNbr": "1",
+                        "title": "chapter 2"
+                    },
+                    "children": [
+                        {
+                            "id": 1000000005202,
+                            "parentId": 1000000005201,
+                            "hidden": false,
+                            "optional": false,
+                            "level": 0,
+                            "sequenceNumber": 0,
+                            "learningResource": {
+                                "id": 1000000005202,
+                                "contentVersion": 1,
+                                "assignments": [],
+                                "learningAids": [],
+                                "learningObjectives": [],
+                                "metadata": {},
+                                "playerSettings": {},
+                                "bookId": "book124",
+                                "seqNbr": "1",
+                                "title": "module 2"
+                            },
+                            "children": []
+                        },
+                        {
+                            "id": 1000000005203,
+                            "parentId": 1000000005201,
+                            "hidden": false,
+                            "optional": false,
+                            "level": 0,
+                            "sequenceNumber": 1,
+                            "learningResource": {
+                                "id": 1000000005203,
+                                "contentVersion": 1,
+                                "assignments": [
+                                    {
+                                        "id": 1000000005204,
+                                        "activities": [
+                                            {
+                                                "id": 1000000005205,
+                                                "sequenceNumber": 1,
+                                                "activityId": "http://blah.blah.com/blah/blah/biglongguid12413",
+                                                "title": "activity 4"
+                                            }
+                                        ],
+                                        "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12408",
+                                        "category": {
+                                            "title": "HW3",
+                                            "contextId": "2003",
+                                            "weight": 10
+                                        },
+                                        "title": "assignment 3"
+                                    },
+                                    {
+                                        "id": 1000000005206,
+                                        "activities": [],
+                                        "assignmentId": "http://blah.blah.com/blah/blah/biglongguid12409",
+                                        "category": {
+                                            "title": "HW4",
+                                            "contextId": "2003",
+                                            "weight": 10
+                                        },
+                                        "title": "assignment 4"
+                                    }
+                                ],
+                                "learningAids": [],
+                                "learningObjectives": [],
+                                "metadata": {},
+                                "playerSettings": {},
+                                "bookId": "book124",
+                                "seqNbr": "1",
+                                "title": "module 3"
+                            },
+                            "children": []
+                        }
+                    ]
+                }
+            ],
+            "contextId": "2003",
+            "contextType": "course",
+            "title": "Test course TOC medium",
+            "bookId": "book124"
+        }
+
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]   
+
 ## Retrieve, Update and Delete Toplevel LearningContext [/learningcontexts/{contextType}/{contextId}]
 ### Retrieve a specific toplevel LearningContext [GET]
 
