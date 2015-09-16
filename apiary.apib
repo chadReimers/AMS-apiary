@@ -7,7 +7,7 @@ Assignment Management Service API.  This API allows management of various aspect
 
 These contracts are specific to REST services, but the body and header data is independent of the particular transport mechanism.
 
-All resources are returned in JSON+HAL format, which allows navigating between resources using the links present in the _links property of all responses. For collections of resources, the resource lists are returned as children of the _embedded property. Each resource contained in those lists will have its own _links property for navigation.
+All resources are returned in JSON format.
 
 ## General Headers
 - `X-Authorization` Required header containing a valid PI Authentication token. A vaid token and the specific user identified in the token are used for various levels of Authorization.
@@ -589,7 +589,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 + Response 403
     [Authorization Failed Error][]           
 
-## Retrieve, Update and Delete a LearningContext [/learningcontexts/{contextType}/{contextId}?expand=true]
+## Retrieve, Update and Delete a LearningContext [/learningcontexts/{contextType}/{contextId}?expand={true|false}]
 ### Retrieve TOC fulltree [GET]
 
 + Parameters
@@ -1242,7 +1242,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
     /bacda414-4a97-11e5-885d-feff819cdc9f
-
+    
 + Response 200 (application/json)
     + Headers
     
@@ -1294,10 +1294,10 @@ All resources are returned in JSON+HAL format, which allows navigating between r
 + Response 403
     [Authorization Failed Error][]
 
-## Retrieve Assignment Group [/learningcontexts/{contextType}/{contextId}/groups/{externalId}?expand=true]
+## Retrieve Assignment Group [/learningcontexts/{contextType}/{contextId}/groups/{externalId}?expand={true|false}]
 ### Retrieve Assignment Group Fulltree [GET] 
 + Parameters
-    + contextType (required,string,`course,group`) ... /learningcontexts/course
+    + contextType (required,string,`course`) ... /learningcontexts/course
     + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
     contextId is the courseId from the related course context       
     Ex : /learningcontexts/course
@@ -1307,6 +1307,7 @@ All resources are returned in JSON+HAL format, which allows navigating between r
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
     /bacda414-4a97-11e5-885d-feff819cdc9f
+    + expand: ?expand=true (optional, boolean) - Expand to retrieve Fulltree.  Default(or absence) is false
 
 + Response 200 (application/json)
     + Headers
