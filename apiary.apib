@@ -1154,23 +1154,25 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]
 
 
-## Retrieve Assignment Groups by course id order by due date [/learningcontexts/{contextType}/{contextId}/groups?sort=dueDate&type="Revel"]
+## Retrieve Assignment Groups by course id order by due date [/learningcontexts/{contextType}/{contextId}/groups/type/{type}?sort=dueDate]
 ### Retrieve Assignment Groups by course id order by due date [GET]
 
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts/course
     + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
-    contextId is the courseId from the related course context       
+    contextId is the courseId from the related course context  
+    + type (required, String, 'Revel')
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
      Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
+    /type/revel
     + sort (optional,string,`dueDate`) 
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
-    ?sort=dueDate&type="Revel"
+    ?sort=dueDate
 
 + Request
     + Headers
