@@ -163,7 +163,7 @@ All resources are returned in JSON format.
 
 # Group TOC Fulltree
 
-## Create TOC Fulltree [/learningcontexts]
+## Create TOC Fulltree [ /learningcontexts ]
 
 ### Create TOC Fulltree Request and Response [POST]
 
@@ -1979,6 +1979,461 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]   
                                    
+# Group Assignment Group Full-Tree
+
+## Create Assignment Group Fulltree [ /learningcontexts/{contextType}/{contextId}/groups/{externalId} ]
+
+### Create an Assignment Group Full-tree Request and Response [POST]
+
++ Request (application/json)
+
+        {
+            "contextType": "group",
+            "contextId": "2304985720349587238457",
+            "ctrldAcsActivity": true,
+            "released": true,
+            "updatable": true,
+            "availabilityDate": 1440440596995,
+            "createdAt": 1440440596995,
+            "dueDate": 1440440596995,
+            "updatedAt": 1440440596995,
+            "pointsPossible": 125,
+            "ungradablePoints": 12,
+            "treeVersion": 1,
+            "version": 1,
+            "backgroundUri": "myBackgroundUrl",
+            "bookId": "8ac2dee2-4394-46e8-af7b-d59b675440af",
+            "description": "This is a test assignment.",
+            "externalId": "34567",
+            "launchUri": "MyLaunchUri",
+            "note": "Bubba-Gump shrimp is good!",
+            "noteAuthor": "Forest Gump",
+            "thumbnailUri": "myThumbUri",
+            "type": "test",
+            "title": "Test Assignment",
+            "structureNodes": [
+            {
+                "hidden": false,
+                "level": 99,
+                "learningResource": {
+                    "assetType": "unknown",
+                    "assignments": [{
+                        "assignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                        "activities": [{
+                            "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                            "excluded": false,
+                            "gradable": true,
+                            "hidden": false,
+                            "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                            "pointsPossible": 0.0,
+                            "ungradablePoints": 0.0,
+                            "subType": "mcq",
+                            "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 1",
+                            "type": "module_quiz"
+                        }],
+                        "gradable": true,
+                        "hidden": false,
+                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                        "pointsPossible": 0.0,
+                        "ungradablePoints": 0.0,
+                        "source": "PAF",
+                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context",
+                        "locked": false
+                    }],
+                    "hidden": false,
+                    "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign01.xhtml",
+                    "itemId": "add79dd30690ea53c964552276f5f8500cee9be24",
+                    "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                    "pointsPossible": 0.0,
+                    "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign01.xhtml",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 1",
+                    "level": "99",
+                    "seqNbr": "10",
+                    "excluded": false,
+                    "released": false
+                },
+                "optional": false,
+                "pointsPossible": 0.0,
+                "ungradablePoints": 0.0,
+                "contentType": "LearningResource",
+                "sequenceNumber": 10
+            },
+            {
+                "hidden": false,
+                "level": 99,
+                "learningResource": {
+                    "assetType": "unknown",
+                    "assignments": [{
+                        "assignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                        "activities": [{
+                            "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/6cacd146-2640-42d8-8f8a-5f2c28be9c09",
+                            "excluded": false,
+                            "gradable": true,
+                            "hidden": false,
+                            "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/6cacd146-2640-42d8-8f8a-5f2c28be9c09",
+                            "pointsPossible": 0.0,
+                            "ungradablePoints": 0.0,
+                            "subType": "mcq",
+                            "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 2",
+                            "type": "module_quiz"
+                        }],
+                        "gradable": true,
+                        "hidden": false,
+                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                        "pointsPossible": 0.0,
+                        "ungradablePoints": 0.0,
+                        "source": "PAF",
+                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context",
+                        "locked": false
+                    }],
+                    "hidden": false,
+                    "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign02.xhtml",
+                    "itemId": "a3f571272b59e349e01d4d644bb8e6b9dfd6228ac",
+                    "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                    "pointsPossible": 0.0,
+                    "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign02.xhtml",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 2",
+                    "level": "99",
+                    "seqNbr": "11",
+                    "excluded": false,
+                    "released": false
+                },
+                "optional": false,
+                "pointsPossible": 0.0,
+                "ungradablePoints": 0.0,
+                "contentType": "LearningResource",
+                "sequenceNumber": 11
+            },
+            {
+                "hidden": false,
+                "level": 99,
+                "learningResource": {
+                    "assetType": "unknown",
+                    "assignments": [{
+                        "assignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                        "activities": [{
+                            "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/8ca60330-d4db-40a5-a53b-996f815c1e96",
+                            "excluded": false,
+                            "gradable": true,
+                            "hidden": false,
+                            "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/8ca60330-d4db-40a5-a53b-996f815c1e96",
+                            "pointsPossible": 0.0,
+                            "ungradablePoints": 0.0,
+                            "subType": "mcq",
+                            "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 3",
+                            "type": "module_quiz"
+                        }],
+                        "gradable": true,
+                        "hidden": false,
+                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                        "pointsPossible": 0.0,
+                        "ungradablePoints": 0.0,
+                        "source": "PAF",
+                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context",
+                        "locked": false
+                    }],
+                    "hidden": false,
+                    "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign03.xhtml",
+                    "itemId": "a083b4d5561a7cc6db587ec7eb42b78d3c71a92ec",
+                    "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                    "pointsPossible": 0.0,
+                    "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign03.xhtml",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 3",
+                    "level": "99",
+                    "seqNbr": "12",
+                    "excluded": false,
+                    "released": false
+                },
+                "optional": false,
+                "pointsPossible": 0.0,
+                "ungradablePoints": 0.0,
+                "contentType": "LearningResource",
+                "sequenceNumber": 12
+            },
+            {
+                "hidden": false,
+                "level": 99,
+                "learningResource": {
+                    "assetType": "unknown",
+                    "hidden": false,
+                    "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-bmatter.xhtml",
+                    "itemId": "af6b9110002d1c22e1a2a2e6e755d248738abdc1e",
+                    "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                    "pointsPossible": 0.0,
+                    "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-bmatter.xhtml",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context",
+                    "level": "99",
+                    "seqNbr": "13",
+                    "excluded": false,
+                    "released": false
+                },
+                "optional": false,
+                "pointsPossible": 0.0,
+                "ungradablePoints": 0.0,
+                "contentType": "LearningResource",
+                "sequenceNumber": 13
+            }]
+        }
+
++ Response 201 (application/json)
+
+        {
+          "learningContextId": 1000000000014,
+          "ctrldAcsActivity": true,
+          "released": true,
+          "updatable": true,
+          "availabilityDate": 1440440596995,
+          "createdAt": 1440440596995,
+          "dueDate": 1440440596995,
+          "updatedAt": 1440440596995,
+          "pointsPossible": 125,
+          "ungradablePoints": 12,
+          "treeVersion": 1,
+          "version": 1,
+          "structureNodes": [
+            {
+              "id": 1729,
+              "parentId": 0,
+              "hidden": false,
+              "optional": false,
+              "pointsPossible": 0,
+              "level": 0,
+              "sequenceNumber": 0,
+              "learningResource": {
+                "id": 10,
+                "hidden": false,
+                "released": false,
+                "contentVersion": 1,
+                "level": 99,
+                "pointsPossible": 0,
+                "assignments": [
+                  {
+                    "id": 11,
+                    "gradable": true,
+                    "hidden": false,
+                    "locked": false,
+                    "pointsPossible": 0,
+                    "ungradablePoints": 0,
+                    "activities": [
+                      {
+                        "id": 12,
+                        "excluded": false,
+                        "gradable": true,
+                        "hidden": false,
+                        "pointsPossible": 0,
+                        "ungradablePoints": 0,
+                        "sequenceNumber": 1,
+                        "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                        "subType": "mcq",
+                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 1",
+                        "type": "module_quiz"
+                      }
+                    ],
+                    "assignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                    "category": {},
+                    "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                    "source": "PAF",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context"
+                  }
+                ],
+                "assetType": "unknown",
+                "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign01.xhtml",
+                "itemId": "add79dd30690ea53c964552276f5f8500cee9be24",
+                "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign01.xhtml",
+                "seqNbr": "1",
+                "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 1"
+              }
+            },
+            {
+              "id": 1732,
+              "parentId": 0,
+              "hidden": false,
+              "optional": false,
+              "pointsPossible": 0,
+              "level": 0,
+              "sequenceNumber": 1,
+              "learningResource": {
+                "id": 13,
+                "hidden": false,
+                "released": false,
+                "contentVersion": 1,
+                "level": 99,
+                "pointsPossible": 0,
+                "assignments": [
+                  {
+                    "id": 11,
+                    "gradable": true,
+                    "hidden": false,
+                    "locked": false,
+                    "pointsPossible": 0,
+                    "ungradablePoints": 0,
+                    "activities": [
+                      {
+                        "id": 14,
+                        "excluded": false,
+                        "gradable": true,
+                        "hidden": false,
+                        "pointsPossible": 0,
+                        "ungradablePoints": 0,
+                        "sequenceNumber": 1,
+                        "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/6cacd146-2640-42d8-8f8a-5f2c28be9c09",
+                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/6cacd146-2640-42d8-8f8a-5f2c28be9c09",
+                        "subType": "mcq",
+                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 2",
+                        "type": "module_quiz"
+                      }
+                    ],
+                    "assignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                    "category": {},
+                    "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                    "source": "PAF",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context"
+                  }
+                ],
+                "assetType": "unknown",
+                "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign02.xhtml",
+                "itemId": "a3f571272b59e349e01d4d644bb8e6b9dfd6228ac",
+                "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign02.xhtml",
+                "seqNbr": "1",
+                "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 2"
+              }
+            },
+            {
+              "id": 1735,
+              "parentId": 0,
+              "hidden": false,
+              "optional": false,
+              "pointsPossible": 0,
+              "level": 0,
+              "sequenceNumber": 2,
+              "learningResource": {
+                "id": 15,
+                "hidden": false,
+                "released": false,
+                "contentVersion": 1,
+                "level": 99,
+                "pointsPossible": 0,
+                "assignments": [
+                  {
+                    "id": 11,
+                    "gradable": true,
+                    "hidden": false,
+                    "locked": false,
+                    "pointsPossible": 0,
+                    "ungradablePoints": 0,
+                    "activities": [
+                      {
+                        "id": 16,
+                        "excluded": false,
+                        "gradable": true,
+                        "hidden": false,
+                        "pointsPossible": 0,
+                        "ungradablePoints": 0,
+                        "sequenceNumber": 1,
+                        "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/8ca60330-d4db-40a5-a53b-996f815c1e96",
+                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/8ca60330-d4db-40a5-a53b-996f815c1e96",
+                        "subType": "mcq",
+                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 3",
+                        "type": "module_quiz"
+                      }
+                    ],
+                    "assignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                    "category": {},
+                    "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                    "source": "PAF",
+                    "title": "Quiz: 0.1 The Power of Art and the Impact of Context"
+                  }
+                ],
+                "assetType": "unknown",
+                "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign03.xhtml",
+                "itemId": "a083b4d5561a7cc6db587ec7eb42b78d3c71a92ec",
+                "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign03.xhtml",
+                "seqNbr": "1",
+                "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 3"
+              }
+            },
+            {
+              "id": 1738,
+              "parentId": 0,
+              "hidden": false,
+              "optional": false,
+              "pointsPossible": 0,
+              "level": 0,
+              "sequenceNumber": 3,
+              "learningResource": {
+                "id": 17,
+                "hidden": false,
+                "released": false,
+                "contentVersion": 1,
+                "level": 99,
+                "pointsPossible": 0,
+                "assetType": "unknown",
+                "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-bmatter.xhtml",
+                "itemId": "af6b9110002d1c22e1a2a2e6e755d248738abdc1e",
+                "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-bmatter.xhtml",
+                "seqNbr": "1",
+                "title": "Quiz: 0.1 The Power of Art and the Impact of Context"
+              }
+            }
+          ],
+          "backgroundUri": "myBackgroundUrl",
+          "bookId": "8ac2dee2-4394-46e8-af7b-d59b675440af",
+          "description": "This is a test assignment.",
+          "externalId": "34567",
+          "launchUri": "MyLaunchUri",
+          "note": "Bubba-Gump shrimp is good!",
+          "noteAuthor": "Forest Gump",
+          "thumbnailUri": "myThumbUri",
+          "title": "Test Assignment",
+          "type": "test"
+        }
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
+
+## Delete Assignment Group Full-Tree [/learningcontexts/{contextType}/{contextId}/groups/{externalId}?expand=true]
+
+### Delete an Assignment Group [DELETE] 
+    
++ Parameters
+    + contextType (required,string,`course,group`) ... /learningcontexts/course
+    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
+    contextId is the courseId from the related course context       
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    + externalId (required,string,`bacda414-4a97-11e5-885d-feff819cdc9f`) 
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+    /bacda414-4a97-11e5-885d-feff819cdc9f
+    + expand (optional,string,`true`) 
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+    /bacda414-4a97-11e5-885d-feff819cdc9f
+    ?expand=false
+
++ Response 204
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
 
 # Group Assignment State Management
 
