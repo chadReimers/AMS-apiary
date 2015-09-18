@@ -1006,8 +1006,24 @@ All resources are returned in JSON format.
 + Parameters
   + contextType: book (required, string) - context-type (e.g. "book", "course", "group", etc.)
   + contextId:   ba1290d2-f03e-4550-9089-94390a6bc9a6 (required, string) - course-ID or book-ID
+  
++ Request
+    + Headers
+    
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json 
         
 + Response 204 
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
 
 # Group StructureNodes
 ## Delete All Structures [/learningcontexts/{contextType}/{contextId}/structures]
