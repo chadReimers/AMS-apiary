@@ -1664,8 +1664,8 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]            
 
 
-## Retrieve Assignment Group Root Node  by course id [/learningcontexts/{contextType}/{contextId}/groups]
-### Retrieve Assignment Group Root Node by given course id /learningcontexts/{contextType}/{contextId}/groups [GET]
+## Retrieve Assignment Group list by course id [/learningcontexts/{contextType}/{contextId}/groups]
+### Retrieve Assignment Group list by given course id /learningcontexts/{contextType}/{contextId}/groups [GET]
 
 + Parameters
     + contextType (required, string, `course`)... Ex: /learningcontexts/group/
@@ -1688,9 +1688,32 @@ All resources are returned in JSON format.
 
     + Body
             
+        [
             {
-                  "value": "TBD"  
-            }                
+            "learningContextId": 2000000000025,
+            "ctrldAcsActivity": true,
+            "released": true,
+            "updatable": true,
+            "availabilityDate": 1440440597000,
+            "createdAt": 1440440597000,
+            "dueDate": 1440440597000,
+            "updatedAt": 1440440597000,
+            "pointsPossible": 123,
+            "ungradablePoints": 12,
+            "treeVersion": 1,
+            "version": 1,
+            "backgroundUri": "myBackgroundUrl",
+            "bookId": "7890",
+            "description": "MyDescription",
+            "externalId": "34567",
+            "launchUri": "MyLaunchUri",
+            "note": "MyNote",
+            "noteAuthor": "MyNoteAuthor",
+            "thumbnailUri": "MyThumbUri",
+            "title": "MyTitle",
+            "type": "MyType"
+            }
+        ]
 
 + Response 404
     [Not Found Error][]
