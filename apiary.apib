@@ -1238,7 +1238,7 @@ All resources are returned in JSON format.
 
 ## Retrieve Assignment Groups critical attributes by course id and filter by level and specified properties [/learningcontexts/{contextType}/{contextId}/groups?level={level}&props=dueDate|externalId|locked]
 ### Retrieve Assignment Groups critical attributes by course id and filter by level and specified properties [GET] 
-#### dueDtae and type both required. Not either one present you'd see unordered list of groups.
+
 
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts/course
@@ -1250,16 +1250,16 @@ All resources are returned in JSON format.
      Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
-    + sort (optional,string,`dueDate`) 
+    + level (optional,Integer,`0 or 1 or 2`) 
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
-    ?sort=dueDate
-    + filter=type::{type} (optional, String, `revel`)
+    ?level=0
+    + props (optional, Pipe seperated Strings, `dueDate|externalId|locked`)
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
-    ?sort=dueDate&filter=type::revel
+    ?level=0&props=dueDate|externalId|locked|Updatable
 
 + Request
     + Headers
