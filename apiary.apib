@@ -1694,45 +1694,6 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]            
 
-# Group Activities
-
-## Retrieve activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignment/{assignmentId}]
-### Retrieve activities by given course id and assignment id /learningcontexts/{contextType}/{contextId}/assignment/{assignmentId} [GET]
-
-+ Parameters
-    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
-    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /assignment
-    /9408d16e41fa11e5a151feff8
-    
-+ Request
-    + Headers
-    
-            Correlation-Id: UUID
-            X-Authorization: PI Auth Token
-            accept: application/json
-
-+ Response 200
-    + Headers
-    
-            Correlation-Id: UUID // matches request, or generated if not provided on request
-            content-type: application/hal+json
-            Access-Control-Allow-Origin: *
-
-    + Body
-            
-            {
-                  "value": "TBD"  
-            }
-+ Response 404
-    [Not Found Error][]
-+ Response 401
-    [Authentication Required Error][]
-+ Response 403
-    [Authorization Failed Error][]   
 
                                    
 # Group Assignment Group Full-Tree
@@ -2453,6 +2414,47 @@ All resources are returned in JSON format.
 # Group Assignment History
 
 # Group Assignment Library
+
+# Group Activities
+
+## Retrieve activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignment/{assignmentId}]
+### Retrieve activities by given course id and assignment id /learningcontexts/{contextType}/{contextId}/assignment/{assignmentId} [GET]
+
++ Parameters
+    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
+    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /assignment
+    /9408d16e41fa11e5a151feff8
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            {
+                  "value": "TBD"  
+            }
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]   
+
 
 # Group Gradebook specific routes
 
