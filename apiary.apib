@@ -1028,21 +1028,48 @@ All resources are returned in JSON format.
 
 # Group Structure Nodes
 
-## Delete All Structures [/learningcontexts/{contextType}/{contextId}/structures]
-
-### Deleting All Structures for specified learningContext /learningcontexts/{contextType}/{contextId}/structures [DELETE}
+### Delete an Assignment group tree by given course id and array of assignment group id's [DELETE] 
+    
 + Parameters
-      + contextType: book (required, string) - context-type (e.g. "book", "course", "group", etc.)
-      + contextId:   ba1290d2-f03e-4550-9089-94390a6bc9a6 (required, string) - course-ID or book-ID
-        Ex : /learningcontexts/course
-        /48d00f78-4a97-11e5-885d-feff819cdc9f 
-         Ex : /learningcontexts/course
-        /48d00f78-4a97-11e5-885d-feff819cdc9f 
-        /structures
+    + contextType (required,string,`course`) ... /learningcontexts/course
+    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
+    contextId is the courseId from the related course context       
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+     Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+    
+
++ Request
+    + Headers
+    
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json
 
 
+    + Body
+    
+             {
+                
+                "externalIds": [
+                     "aacda414-4a97-11e5-885d-feff819cdc9f",
+                     "bacda414-4a97-11e5-885d-feff819cdc9f",
+                     "cacda414-4a97-11e5-885d-feff819cdc9f",
+                     "dacda414-4a97-11e5-885d-feff819cdc9f"
+                 ]
+            }
++ Response 204
 
++ Response 404
+    [Not Found Error][]
 
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
 
 # Group Assignment Group Top-Level
 
