@@ -1154,8 +1154,9 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]
 
 
-## Retrieve Assignment Groups by course id order by due date [/learningcontexts/{contextType}/{contextId}/groups/type/{type}?sort=dueDate]
-### Retrieve Assignment Groups by course id order by due date [GET]
+## Retrieve Assignment Groups by course id and filter by type order by due date [/learningcontexts/{contextType}/{contextId}/groups?sort=dueDate&filter=type::{type}]
+### Retrieve Assignment Groups by course id and filter by type order by due date [GET] 
+#### if dueDate only specified, you'd see unordered list of groups. Because dueDtae and type both required. Not either one present you'd see unoredered list of groups.
 
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts/course
@@ -1167,12 +1168,16 @@ All resources are returned in JSON format.
      Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
-    /type/revel
     + sort (optional,string,`dueDate`) 
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
     ?sort=dueDate
+    + filter=type::{type} (optional, String, `revel`)
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+    ?sort=dueDate&filter=type::revel
 
 + Request
     + Headers
@@ -1695,6 +1700,44 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]            
 
 
+
+## Retrieve activities by course id and  assessment id [/learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}]
+### Retrieve activities by given course id and assessment id /learningcontexts/{contextType}/{contextId}/assessment/{assessmentId} [GET]
+
++ Parameters
+    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
+    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    + assessmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /assessment
+    /9408d16e41fa11e5a151feff8
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            {
+                  "value": "TBD"  
+            }
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]   
                                    
 # Group Assignment Group Full-Tree
 
@@ -2414,47 +2457,6 @@ All resources are returned in JSON format.
 # Group Assignment History
 
 # Group Assignment Library
-
-# Group Activities
-
-## Retrieve activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignment/{assignmentId}]
-### Retrieve activities by given course id and assignment id /learningcontexts/{contextType}/{contextId}/assignment/{assignmentId} [GET]
-
-+ Parameters
-    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
-    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /assignment
-    /9408d16e41fa11e5a151feff8
-    
-+ Request
-    + Headers
-    
-            Correlation-Id: UUID
-            X-Authorization: PI Auth Token
-            accept: application/json
-
-+ Response 200
-    + Headers
-    
-            Correlation-Id: UUID // matches request, or generated if not provided on request
-            content-type: application/hal+json
-            Access-Control-Allow-Origin: *
-
-    + Body
-            
-            {
-                  "value": "TBD"  
-            }
-+ Response 404
-    [Not Found Error][]
-+ Response 401
-    [Authentication Required Error][]
-+ Response 403
-    [Authorization Failed Error][]   
-
 
 # Group Gradebook specific routes
 
