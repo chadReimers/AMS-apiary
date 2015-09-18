@@ -2584,6 +2584,41 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]   
 
+## Retrieve activities by course id, assignment id and activity id [/learningcontexts/{contextId}/assignment/{assignmentId}/activity/{activityId}]
+### Retrieve activities by given course id and assignment id /learningcontexts/{contextId}/assignment/{assignmentId}/activity/{activityId} [GET]
+
++ Parameters
+    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course/55b65781e4b0b6741aad0395
+    + assessmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course/55b65781e4b0b6741aad0395/assessment/9408d16e41fa11e5a151feff8
+    + activityId (required, string, '')... Ex: /learningcontexts/course/55b65781e4b0b6741aad0395/assessment/9408d16e41fa11e5a151feff8/activity/
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            {
+                  "value": "TBD"  
+            }
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]   
+
+
 
 
 # Group Gradebook Routes
