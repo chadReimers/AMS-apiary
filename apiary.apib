@@ -1059,6 +1059,49 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
+## Delete Nodes and Sub Nodes [/learningcontexts/{contextType}/{contextId}/nodes]
+### Deleting individual nodes (and all sub nodes) for specified learningContext and node Ids /learningcontexts/{contextType}/{contextId}/nodes [DELETE]
+
++ Parameters
+    + contextType (required,string,`course`) ... /learningcontexts/course
+    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`)
+    contextId is the courseId from the related course context
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f
+     Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f
+    /structures
+
+    In addition to URL parameters, a request body is required containing the AssetIds of the nodes you are wishing to delete.
+
++ Request
+    + Headers
+
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json
+
++ Body
+
+            {
+                "externalIds": [
+                    "2",
+                    "3"
+                ]
+            }
+
++ Response 204
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
+
+
 # Group Assignment Group Top-Level
 
 ## Assignment Group [/learningcontexts/{contextType}/{contextId}/groups/]
@@ -1339,7 +1382,7 @@ All resources are returned in JSON format.
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
-    + level (optional,Integer,`0 or 1 or 2`) 
+    + level (optional,Integer,`0 or 1 or 2, 0=Group Only, 1=Group + Chapter, 2=Group + Chapter + Module, ... `)
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
