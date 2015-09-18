@@ -1033,16 +1033,25 @@ All resources are returned in JSON format.
 ### Deleting structures for specified learningContext /learningcontexts/{contextType}/{contextId}/structures [DELETE}
 
 + Parameters
-    + contextType (required,string,`course`) ... /learningcontexts/course
-    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
-    contextId is the courseId from the related course context       
+  + contextType: book (required, string) - context-type (e.g. "book", "course", "group", etc.)
+  + contextId:   ba1290d2-f03e-4550-9089-94390a6bc9a6 (required, string) - course-ID or book-ID
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
      Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /structures
 
++ Request
+    + Headers
+    
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json 
+        
 + Response 204 
+
++ Response 404
+    [Not Found Error][]
 
 + Response 401
     [Authentication Required Error][]
