@@ -2331,7 +2331,7 @@ All resources are returned in JSON format.
     /groups
     /bacda414-4a97-11e5-885d-feff819cdc9f
     + expand: ?expand=true (optional, boolean) - Expand to retrieve Fulltree.  Default(or absence) is false
-    + level (optional,Integer,`0 or 1 or 2, 0=Group Only, 1=Group + Chapter, 2=Group + Chapter + Module, ... `)
+    + level:  ?level=0 (optional,Integer) - Expand to retrieve partial tree.  0 or 1 or 2, 0=Group Only, 1=Group + Chapter, 2=Group + Chapter + Module, ...
 
 + Response 200 (application/json)
     + Headers
