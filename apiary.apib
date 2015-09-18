@@ -1778,52 +1778,6 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]       
  
 
-## Retrieve assignment group id by course id , assessment id and activity id [/learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}/activity/{activityId}]
-### Retrieve assignment group id by given course id , assessment id and activity id /learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}/activity/{activityId} [GET]
-
-+ Parameters
-    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
-    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    + assessmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /assessment
-    /9408d16e41fa11e5a151feff8
-    + activityId (required, String, `bd2076ce41fa11e5a151feff8`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /assessment
-    /9408d16e41fa11e5a151feff819cdc/
-    /activity
-    /bd2076ce41fa11e5a151feff8
- 
-    
-+ Request
-    + Headers
-    
-            Correlation-Id: UUID
-            X-Authorization: PI Auth Token
-            accept: application/json
-
-+ Response 200
-    + Headers
-    
-            Correlation-Id: UUID // matches request, or generated if not provided on request
-            content-type: application/hal+json
-            Access-Control-Allow-Origin: *
-
-    + Body
-            
-            {
-                  "value": "TBD"  
-            }
-+ Response 404
-    [Not Found Error][]
-+ Response 401
-    [Authentication Required Error][]
-+ Response 403
-    [Authorization Failed Error][]            
-
-
 
 ## Retrieve activities by course id and  assessment id [/learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}]
 ### Retrieve activities by given course id and assessment id /learningcontexts/{contextType}/{contextId}/assessment/{assessmentId} [GET]
@@ -2583,6 +2537,56 @@ All resources are returned in JSON format.
 # Group Assignment Library
 
 # Group Gradebook specific routes
+
+# Group Activities
+
+## Retrieve assignment group id by course id , assessment id and activity id [/learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}/activity/{activityId}]
+### Retrieve assignment group id by given course id , assessment id and activity id /learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}/activity/{activityId} [GET]
+
++ Parameters
+    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
+    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    + assessmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /assessment
+    /9408d16e41fa11e5a151feff8
+    + activityId (required, String, `bd2076ce41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /assessment
+    /9408d16e41fa11e5a151feff819cdc/
+    /activity
+    /bd2076ce41fa11e5a151feff8
+ 
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            {
+                  "value": "TBD"  
+            }
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]            
+
+
+
 
 ## Retrieve assignment by course id and  asignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}]
 ### Retrieve assignment by given course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId} [GET]
