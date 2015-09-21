@@ -1289,6 +1289,64 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
+## Retrieve specified properties like critical attributes or only due date of assignment group by given course id, assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{groupId}?props=propName1|propName2|propNameN]
+### Retrieve specified properties like critical attributes or only due date of assignment group by given course id, assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{groupId}?props=propName1|propName2|propNameN] [GET]
+
++ Parameters
+    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
+    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    + groupId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /groups/9408d16e41fa11e5a151feff8
+    + props={propName1|...|propNameN} (optional, string, `props=externalId|dueDate`)... Ex: Retrieve critical attributes for Assignment Group
+    :<br/>/learningcontexts
+    /course/2304985720349587238457
+    /groups/345678?props=contextId|externalId
+    |dueDate|availabilityDate|updatable
+    |locked|pointsPossible|version
+    |ungradablePoints 
+    <br/>Ex : Retrieve Assignment Group
+    with only due date:<br/>
+    /learningcontexts/course
+    /2304985720349587238457
+    /groups/345678?props=dueDate
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+      
+            {
+                "locked": false,
+                "updatable": true,
+                "availabilityDate": 1440440597000,
+                "dueDate": 1440440597000,
+                "pointsPossible": 125,
+                "ungradablePoints": 12,
+                "version": 1,
+                "externalId": "345678",
+                "courseId": "2304985720349587238457"
+            }      
+            
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]         
+
 ## Retrieve assignment group id by course id , assessment id and activity id [/learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}/activity/{activityId}]
 ### Retrieve assignment group id by given course id , assessment id and activity id /learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}/activity/{activityId} [GET]
 
