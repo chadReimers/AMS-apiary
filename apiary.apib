@@ -1301,8 +1301,8 @@ All resources are returned in JSON format.
 
 
 
-## Retrieve specified properties (like critical attributes or only due date) of assignment group by given course id, assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{groupId}?props={propName1|propName2|....|propNameN}]
-### Retrieve critical attributes or only due date of assignment group by given course id, assignment group id [GET]
+## Retrieve specified properties like critical attributes or only due date of assignment group by given course id, assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{groupId}?props={propName1|propName2|....|propNameN}]
+### Retrieve specified properties like critical attributes or only due date of assignment group by given course id, assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{groupId}?props={propName1|propName2|....|propNameN}] [GET]
 
 + Parameters
     + contextType (required, string, `course`)... Ex: /learningcontexts/course/
@@ -1314,8 +1314,8 @@ All resources are returned in JSON format.
     + props={propName1...|propNameN} (optional, string, `props=externalId|dueDate`)... Ex: Retrieve critical attributes for Assignment Group
     :<br/>/learningcontexts
     /course/2304985720349587238457
-    /groups/345678?props=contextId|externalId|dueDate
-    |availabilityDate|updatable
+    /groups/345678?props=contextId|externalId
+    |dueDate|availabilityDate|updatable
     |locked|pointsPossible|version
     |ungradablePoints 
     <br/>Ex : Retrieve Assignment Group
