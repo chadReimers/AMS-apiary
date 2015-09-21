@@ -2620,6 +2620,277 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
+## Retrieve Expanded Assignment Groups list by course id [/learningcontexts/{contextType}/{contextId}/groups?expand=true]
+
+### Retrieve Expanded Assignment Groups list by given course id [GET]
+
++ Parameters
+    + contextType (required, string, `course`)... Ex: /learningcontexts/group/
+    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/group
+    /55b65781e4b0b6741aad0395
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            [
+                {
+                    "learningContextId": 1000000000001,
+                    "ctrldAcsActivity": true,
+                    "released": true,
+                    "updatable": true,
+                    "availabilityDate": 1440440597000,
+                    "createdAt": 1440440597000,
+                    "dueDate": 1440440597000,
+                    "updatedAt": 1440440597000,
+                    "pointsPossible": 125,
+                    "ungradablePoints": 12,
+                    "treeVersion": 1,
+                    "version": 1,
+                    "structureNodes": [
+                        {
+                            "id": 1000000001721,
+                            "parentId": 0,
+                            "hidden": false,
+                            "optional": false,
+                            "pointsPossible": 0,
+                            "level": 0,
+                            "sequenceNumber": 1,
+                            "learningResource": {
+                                "id": 1000000000012,
+                                "excluded": false,
+                                "hidden": false,
+                                "released": false,
+                                "contentVersion": 1,
+                                "level": 99,
+                                "pointsPossible": 0,
+                                "assignments": [
+                                    {
+                                        "id": 1000000000010,
+                                        "gradable": true,
+                                        "hidden": false,
+                                        "locked": false,
+                                        "pointsPossible": 0,
+                                        "ungradablePoints": 0,
+                                        "activities": [
+                                            {
+                                                "id": 1000000000013,
+                                                "excluded": false,
+                                                "gradable": true,
+                                                "hidden": false,
+                                                "pointsPossible": 0,
+                                                "ungradablePoints": 0,
+                                                "sequenceNumber": 0,
+                                                "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/6cacd146-2640-42d8-8f8a-5f2c28be9c09",
+                                                "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/6cacd146-2640-42d8-8f8a-5f2c28be9c09",
+                                                "subType": "mcq",
+                                                "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 2",
+                                                "type": "module_quiz"
+                                            }
+                                        ],
+                                        "assignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                                        "category": {},
+                                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                                        "source": "PAF",
+                                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context"
+                                    }
+                                ],
+                                "assetType": "unknown",
+                                "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign02.xhtml",
+                                "itemId": "a3f571272b59e349e01d4d644bb8e6b9dfd6228ac",
+                                "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign02.xhtml",
+                                "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 2"
+                            }
+                        },
+                        {
+                            "id": 1000000001724,
+                            "parentId": 0,
+                            "hidden": false,
+                            "optional": false,
+                            "pointsPossible": 0,
+                            "level": 0,
+                            "sequenceNumber": 2,
+                            "learningResource": {
+                                "id": 1000000000014,
+                                "excluded": false,
+                                "hidden": false,
+                                "released": false,
+                                "contentVersion": 1,
+                                "level": 99,
+                                "pointsPossible": 0,
+                                "assignments": [
+                                    {
+                                        "id": 1000000000010,
+                                        "gradable": true,
+                                        "hidden": false,
+                                        "locked": false,
+                                        "pointsPossible": 0,
+                                        "ungradablePoints": 0,
+                                        "activities": [
+                                            {
+                                                "id": 1000000000015,
+                                                "excluded": false,
+                                                "gradable": true,
+                                                "hidden": false,
+                                                "pointsPossible": 0,
+                                                "ungradablePoints": 0,
+                                                "sequenceNumber": 0,
+                                                "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/8ca60330-d4db-40a5-a53b-996f815c1e96",
+                                                "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/8ca60330-d4db-40a5-a53b-996f815c1e96",
+                                                "subType": "mcq",
+                                                "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 3",
+                                                "type": "module_quiz"
+                                            }
+                                        ],
+                                        "assignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                                        "category": {},
+                                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                                        "source": "PAF",
+                                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context"
+                                    }
+                                ],
+                                "assetType": "unknown",
+                                "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign03.xhtml",
+                                "itemId": "a083b4d5561a7cc6db587ec7eb42b78d3c71a92ec",
+                                "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign03.xhtml",
+                                "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 3"
+                            }
+                        }
+                    ],
+                    "backgroundUri": "myBackgroundUrl",
+                    "bookId": "8ac2dee2-4394-46e8-af7b-d59b675440af",
+                    "description": "This is a test assignment.",
+                    "externalId": "320945727",
+                    "launchUri": "MyLaunchUri",
+                    "thumbnailUri": "myThumbUri",
+                    "title": "Test Assignment 2",
+                    "type": "test"
+                },
+                {
+                    "learningContextId": 1000000000002,
+                    "ctrldAcsActivity": true,
+                    "released": true,
+                    "updatable": true,
+                    "availabilityDate": 1440440597000,
+                    "createdAt": 1440440597000,
+                    "dueDate": 1440440597000,
+                    "updatedAt": 1440440597000,
+                    "pointsPossible": 125,
+                    "ungradablePoints": 12,
+                    "treeVersion": 1,
+                    "version": 1,
+                    "structureNodes": [
+                        {
+                            "id": 1000000001728,
+                            "parentId": 0,
+                            "hidden": false,
+                            "optional": false,
+                            "pointsPossible": 0,
+                            "level": 0,
+                            "sequenceNumber": 0,
+                            "learningResource": {
+                                "id": 1000000000009,
+                                "excluded": false,
+                                "hidden": false,
+                                "released": false,
+                                "contentVersion": 1,
+                                "level": 99,
+                                "pointsPossible": 0,
+                                "assignments": [],
+                                "assetType": "unknown",
+                                "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign01.xhtml",
+                                "itemId": "add79dd30690ea53c964552276f5f8500cee9be24",
+                                "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign01.xhtml",
+                                "title": "How to Tell Art From Shrimp"
+                            }
+                        }
+                    ],
+                    "backgroundUri": "myBackgroundUrl",
+                    "bookId": "8ac2dee2-4394-46e8-af7b-d59b675440af",
+                    "description": "This is a test assignment.",
+                    "externalId": "34567",
+                    "launchUri": "MyLaunchUri",
+                    "note": "Bubba-Gump shrimp is good!",
+                    "noteAuthor": "Forest Gump",
+                    "thumbnailUri": "myThumbUri",
+                    "title": "Test Assignment 1",
+                    "type": "test"
+                },
+                {
+                    "learningContextId": 1000000000003,
+                    "ctrldAcsActivity": true,
+                    "released": true,
+                    "updatable": true,
+                    "availabilityDate": 1440440597000,
+                    "createdAt": 1440440597000,
+                    "dueDate": 1440440597000,
+                    "updatedAt": 1440440597000,
+                    "pointsPossible": 125,
+                    "ungradablePoints": 12,
+                    "treeVersion": 1,
+                    "version": 1,
+                    "structureNodes": [
+                        {
+                            "id": 1000000001738,
+                            "parentId": 0,
+                            "hidden": false,
+                            "optional": false,
+                            "pointsPossible": 0,
+                            "level": 0,
+                            "sequenceNumber": 0,
+                            "learningResource": {
+                                "id": 1000000000009,
+                                "excluded": false,
+                                "hidden": false,
+                                "released": false,
+                                "contentVersion": 1,
+                                "level": 99,
+                                "pointsPossible": 0,
+                                "assignments": [],
+                                "assetType": "unknown",
+                                "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign01.xhtml",
+                                "itemId": "add79dd30690ea53c964552276f5f8500cee9be24",
+                                "parentItemId": "aba4fc2a5be99f67bb4e5e486e550826af7dda166",
+                                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/ch00-q01-assign01.xhtml",
+                                "title": "Shrimp is gooooooooood!"
+                            }
+                        }
+                    ],
+                    "backgroundUri": "myBackgroundUrl",
+                    "bookId": "8ac2dee2-4394-46e8-af7b-d59b675440af",
+                    "description": "This is yet another test assignment.",
+                    "externalId": "582059",
+                    "launchUri": "MyLaunchUri",
+                    "note": "Bubba-Gump shrimp is good!",
+                    "noteAuthor": "Forest Gump",
+                    "thumbnailUri": "myThumbUri",
+                    "title": "Test Assignment 3",
+                    "type": "test"
+                }
+            ]
+
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]
+
 ## Delete Assignment Group Full-Tree [/learningcontexts/{contextType}/{contextId}/groups/{externalId}?expand=true ]
 
 ### Delete an Assignment Group Full-Tree Request and Response [DELETE] 
