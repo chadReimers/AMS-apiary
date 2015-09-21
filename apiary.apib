@@ -1125,7 +1125,7 @@ All resources are returned in JSON format.
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
      Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
-    /structures
+    /nodes
     
 + Request
     + Headers
@@ -1134,7 +1134,16 @@ All resources are returned in JSON format.
             X-Authorization: PI Auth Token
             accept : application/json
 
++ Response 204
 
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
 
 # Group Assignment Group Top-Level
 
