@@ -72,6 +72,61 @@ All resources are returned in JSON format.
 
 # Group Learning Resource
 
+## Retrieve Learning Resource by course id and  asignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/learningresources]
+### Retrieve assignment by given course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/learningresources [GET]
++ Parameters
+    + contextType (required,string,`course`) ... /learningcontexts
+    /course
+    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts
+    /course
+    /4072f6d4-4843-11e5-a151-feff819cdc9f
+    + assignmentId (required, string, `4072f9e0-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts
+    /course
+    /4072f6d4-4843-11e5-a151-feff819cdc9f
+    /assignments
+    /4072f9e0-4843-11e5-a151-feff819cdc9f
+    /learningresources
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+             {
+                "id": 2000000000080,
+                "excluded": false,
+                "hidden": false,
+                "released": false,
+                "contentVersion": 1,
+                "level": 1,
+                "pointsPossible": 0,
+                "assetType": "chapter",
+                "itemHref": "158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/bkm01_introduction.xhtml",
+                "itemId": "aaab19fd4547d01b8085cb04034117d165aff9161",
+                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/bkm01_introduction.xhtml",
+                "thumbnailUrl": "https://revel-stg.pearson.com/eps/sanvan/api/item/1b3b9690-8aef-4ae7-9820-9d6453ccfdd6/1/file/images/default_chapter_thumbnail.jpg",
+                "title": "Chapter 1"
+            }
+            
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]   
+          
+
 # Group TOC Toplevel
 
 ## Create a Toplevel Learningcontext [/learningcontexts]
