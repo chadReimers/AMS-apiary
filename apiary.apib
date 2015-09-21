@@ -1301,11 +1301,6 @@ All resources are returned in JSON format.
 
 
 
-
-
-
-
-
 ## Retrieve critical attributes or only due date of assignment group by given course id, assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{groupId}?props={propertyName1|propertyName2|....|propertyNameN}]
 ### Retrieve critical attributes or only due date of assignment group by given course id, assignment group id  /learningcontexts/{contextType}/{contextId}/groups/{groupId}?props={propertyName1|propertyName2|....|propertyNameN} [GET]
 
@@ -1315,7 +1310,8 @@ All resources are returned in JSON format.
     /55b65781e4b0b6741aad0395
     + groupId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395/groups/9408d16e41fa11e5a151feff8
-    + props={propertyName1|propertyName2|....|propertyNameN} (optional, String, propertyName1|propertyName2|....|propertyNameN)
+    + props (required, string, `9408d16e41fa11e5a151feff8`) props={propertyName1|propertyName2|....|propertyNameN} (optional, String, propertyName1|propertyName2|....|propertyNameN)
+    Ex : /learningcontexts/course/2304985720349587238457/groups/345678?props=contextId|externalId|dueDate|availabilityDate|updatable|locked|pointsPossible|version|ungradablePoints
     Ex : /learningcontexts/course/2304985720349587238457/groups/345678?props=contextId|externalId|dueDate|availabilityDate|updatable|locked|pointsPossible|version|ungradablePoints
     
 + Request
