@@ -1289,8 +1289,11 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
-## Retrieve specified properties like critical attributes or only due date of assignment group by given course id, assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{groupId}?props=propName1|propName2|propNameN]
-### Retrieve specified properties like critical attributes or only due date of assignment group by given course id, assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{groupId}?props=propName1|propName2|propNameN] [GET]
+
+
+## Retrieve specified properties like critical attributes or only due date of assignment group by given course id, assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{groupId}?props=dueDate|externalId|locked]
+
+### Retrieve specified properties like critical attributes or only due date of assignment group by given course id, assignment group id [GET]
 
 + Parameters
     + contextType (required, string, `course`)... Ex: /learningcontexts/course/
@@ -1346,6 +1349,13 @@ All resources are returned in JSON format.
     [Authentication Required Error][]
 + Response 403
     [Authorization Failed Error][]         
+
+
+
+
+
+
+
 
 ## Retrieve assignment group id by course id , assessment id and activity id [/learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}/activity/{activityId}]
 ### Retrieve assignment group id by given course id , assessment id and activity id /learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}/activity/{activityId} [GET]
