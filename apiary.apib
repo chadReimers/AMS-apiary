@@ -2613,16 +2613,16 @@ All resources are returned in JSON format.
 # Group Assignment Library
 
 # Group Activities
-## Retrieve activities by course id and  assessment id [/learningcontexts/{contextType}/{contextId}/assessment/{assessmentId}]
-### Retrieve activities by given course id and assessment id /learningcontexts/{contextType}/{contextId}/assessment/{assessmentId} [GET]
+## Retrieve activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignment/{assignmentId}/activities]
+### Retrieve activities by course id and assignment id /learningcontexts/{contextType}/{contextId}/assignment/{assignmentId}/activities [GET]
 
 + Parameters
     + contextType (required, string, `course`)... Ex: /learningcontexts/course/
     + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
-    + assessmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
-    /assessment
+    /assignment
     /9408d16e41fa11e5a151feff8
     
 + Request
@@ -2651,8 +2651,8 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]   
 
-## Retrieve activities by course id, assignment id and activity id [/learningcontexts/{contextId}/assignment/{assignmentId}/activity/{activityId}]
-### Retrieve activities by given course id and assignment id /learningcontexts/{contextId}/assignment/{assignmentId}/activity/{activityId} [GET]
+## Retrieve activities by course id, assignment id and activity id [/learningcontexts/{contextId}/assignment/{assignmentId}/activities/{activityId}]
+### Retrieve activities by course id, assignment id and activity id /learningcontexts/{contextId}/assignment/{assignmentId}/activities/{activityId} [GET]
 
 + Parameters
     + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
