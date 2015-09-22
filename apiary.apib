@@ -1417,15 +1417,16 @@ All resources are returned in JSON format.
     + props={propName1%7C%2E%2E%2E%7CpropNameN} (optional, string, `props=externalId|dueDate`)... Ex: Retrieve critical attributes for Assignment Group
     :<br/>/learningcontexts
     /course/2304985720349587238457
-    /groups/345678?props=contextId|externalId
+    /groups/345678?filter=type::revel
+    &props=contextId|externalId
     |dueDate|availabilityDate|updatable
     |locked|pointsPossible|version
     |ungradablePoints 
-    <br/>Ex : Retrieve Assignment Group
+    <br/>Ex : Retrieve Assignment Groups for group type 'revel'
     with only due date:<br/>
     /learningcontexts/course
     /2304985720349587238457
-    /groups/345678?props=dueDate
+    /groups/345678?filter=type::revel&props=dueDate
 
 + Request
     + Headers
