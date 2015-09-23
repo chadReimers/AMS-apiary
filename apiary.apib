@@ -3352,8 +3352,8 @@ All resources are returned in JSON format.
     [Authorization Failed Error][] 
 
 
-## Retrieve assignments by course id order by category, order by due date,order by level,order by sequence number [/learningcontexts/{contextType}/{contextId}/assignments]
-### Retrieve assignments by given course id order by category,order by due date,order by level,order by sequence number /learningcontexts/{contextType}/{contextId}/assignments [GET]
+## Retrieve assignments by course id order by category, order by due date,order by level,order by sequence number [/learningcontexts/{contextType}/{contextId}/assignments?sort=category|dueDate|level|sequenceNumber]
+### Retrieve assignments by given course id order by category,order by due date,order by level,order by sequence number /learningcontexts/{contextType}/{contextId}/assignments?sort=category|dueDate|level|sequenceNumber [GET]
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts
     /course
@@ -3361,6 +3361,8 @@ All resources are returned in JSON format.
     /course
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /assignments
+    ?sort=category|dueDate
+    |level|sequenceNumber
    
     
 + Request
