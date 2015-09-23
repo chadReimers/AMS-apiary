@@ -1128,14 +1128,12 @@ All resources are returned in JSON format.
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /nodes
 
-    
 + Request
     + Headers
     
             Correlation-Id : UUID
             X-Authorization: PI Auth Token
             accept : application/json
-
 + Response 204
 
 + Response 404
@@ -3152,15 +3150,20 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]   
 
-## Retrieve activities by course id, assignment id and activity id [/learningcontexts/{contextId}/assignment/{assignmentId}/activities/{activityId}]
-### Retrieve activities by course id, assignment id and activity id /learningcontexts/{contextId}/assignment/{assignmentId}/activities/{activityId} [GET]
+## Retrieve activities by course id, assignment type, assignment id and activity id [/learningcontexts/{contextId}/assignment/{assignmentType}/{assignmentId}/activities/{activityId}]
+### Retrieve activities by course id, assignment type, assignment id and activity id /learningcontexts/{contextId}/assignment/{assignmentType}/{assignmentId}/activities/{activityId} [GET]
 
 + Parameters
     + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
+     + assignmentType (required, string, `stud`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /assignment
+    /stud
     + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
     /assignment
+    /stud
     /9408d16e41fa11e5a151feff8
     + activityId (required, string, '')... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
