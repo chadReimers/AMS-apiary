@@ -3064,6 +3064,102 @@ All resources are returned in JSON format.
 # Group Assignment Library
 
 # Group Activities
+## Retrieve assignment by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}]
+### Retrieve assignment by course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId} [GET]
+
++ Parameters
+    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
+    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /assignments
+    /9408d16e41fa11e5a151feff8
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+           
+            [
+              {
+                  "contextType": "group",
+                    "contextId": "2304985720349587238457",
+                    "ctrldAcsActivity": true,
+                    "released": true,
+                    "updatable": true,
+                    "availabilityDate": 1440440596995,
+                    "createdAt": 1440440596995,
+                    "dueDate": 1440440596995,
+                    "updatedAt": 1440440596995,
+                    "pointsPossible": 125,
+                    "ungradablePoints": 12,
+                    "treeVersion": 1,
+                    "version": 1,
+                    "backgroundUri": "myBackgroundUrl",
+                    "bookId": "8ac2dee2-4394-46e8-af7b-d59b675440af",
+                    "description": "This is a test assignment.",
+                    "externalId": "34567",
+                    "launchUri": "MyLaunchUri",
+                    "note": "Bubba-Gump shrimp is good!",
+                    "noteAuthor": "Forest Gump",
+                    "thumbnailUri": "myThumbUri",
+                    "type": "test",
+                    "title": "Test Assignment",
+                    "structureNodes": [
+            
+                        {
+                            "id": 1000000000025,
+                            "excluded": false,
+                            "gradable": true,
+                            "hidden": false,
+                            "pointsPossible": 0,
+                            "ungradablePoints": 0,
+                            "sequenceNumber": 0,
+                            "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                            "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                            "subType": "mcq",
+                            "title": "Quiz: 0.2 The Power of Art and the Impact of Context, question 2",
+                            "type": "module_quiz",
+                            "shortTitle": " quiz 1"
+                        },
+                        {
+                            "id": 1000000000025,
+                            "excluded": false,
+                            "gradable": true,
+                            "hidden": false,
+                            "pointsPossible": 0,
+                            "ungradablePoints": 0,
+                            "sequenceNumber": 0,
+                            "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                            "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                            "subType": "mcq",
+                            "title": "Quiz: 0.2 The Power of Art and the Impact of Context, question 2",
+                            "type": "module_quiz",
+                            "shortTitle": " quiz 2"
+                        }]
+              }
+            ]
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]   
+
+
 ## Retrieve activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activities]
 ### Retrieve activities by course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activities [GET]
 
@@ -3075,6 +3171,7 @@ All resources are returned in JSON format.
     /55b65781e4b0b6741aad0395
     /assignments
     /9408d16e41fa11e5a151feff8
+    /activities
     
 + Request
     + Headers
@@ -3146,7 +3243,7 @@ All resources are returned in JSON format.
     /55b65781e4b0b6741aad0395
     /assignments
     /9408d16e41fa11e5a151feff8
-    /activity
+    /activities
     /8904d16e41fa11e5a151f8fef
     
 + Request
