@@ -3053,6 +3053,70 @@ All resources are returned in JSON format.
 # Group Assignment Assessment Association
 
 # Group Assignment Filtering
+## Retrieve assignment by assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}
+### Retrieve assignment by assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId} [GET]
+
++ Parameters
+    + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /assignments
+    /9408d16e41fa11e5a151feff8
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            [
+                {
+                    "id": 1000000000025,
+                    "excluded": false,
+                    "gradable": true,
+                    "hidden": false,
+                    "pointsPossible": 0,
+                    "ungradablePoints": 0,
+                    "sequenceNumber": 0,
+                    "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                    "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                    "subType": "mcq",
+                    "title": "Quiz: 0.2 The Power of Art and the Impact of Context, question 2",
+                    "type": "module_quiz",
+                    "shortTitle": " quiz 1"
+                },
+                {
+                    "id": 1000000000025,
+                    "excluded": false,
+                    "gradable": true,
+                    "hidden": false,
+                    "pointsPossible": 0,
+                    "ungradablePoints": 0,
+                    "sequenceNumber": 0,
+                    "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                    "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e408",
+                    "subType": "mcq",
+                    "title": "Quiz: 0.2 The Power of Art and the Impact of Context, question 2",
+                    "type": "module_quiz",
+                    "shortTitle": " quiz 2"
+                }
+            ]
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]   
+
 
 # Group Assignment Actions
 
