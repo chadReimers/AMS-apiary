@@ -3063,21 +3063,16 @@ All resources are returned in JSON format.
 # Group Assignment Library
 
 # Group Activities
-## Retrieve activities by course id, assignment type and  assignment id [/learningcontexts/{contextType}/{contextId}/assignment/{assignmentType}/{assignmentId}/activities]
-### Retrieve activities by course id, assignment type and assignment id /learningcontexts/{contextType}/{contextId}/assignment/{assignmentType}/{assignmentId}/activities [GET]
+## Retrieve activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignment/{assignmentId}/activities]
+### Retrieve activities by course id and assignment id /learningcontexts/{contextType}/{contextId}/assignment/{assignmentId}/activities [GET]
 
 + Parameters
     + contextType (required, string, `course`)... Ex: /learningcontexts/course/
     + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
-    + assignmentType (required, string, `stud`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /assignment
-    /stud
     + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
     /assignment
-    /stud
     /9408d16e41fa11e5a151feff8
     
 + Request
@@ -3135,27 +3130,21 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]   
 
-## Retrieve activities by course id, assignment type, assignment id and activity id [/learningcontexts/{contextId}/assignment/{assignmentType}/{assignmentId}/activities/{activityId}]
-### Retrieve activities by course id, assignment type, assignment id and activity id /learningcontexts/{contextId}/assignment/{assignmentType}/{assignmentId}/activities/{activityId} [GET]
+## Retrieve activities by course id, assignment id and activity id [/learningcontexts/{contextId}/assignment/{assignmentId}/activities/{activityId}]
+### Retrieve activities by course id, assignment id and activity id /learningcontexts/{contextId}/assignment/{assignmentId}/activities/{activityId} [GET]
 
 + Parameters
     + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
-     + assignmentType (required, string, `stud`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /assignment
-    /stud
     + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
     /assignment
-    /stud
     /9408d16e41fa11e5a151feff8
     + activityId (required, string, `8904d16e41fa11e5a151f8fef`)... Ex: /learningcontexts
     /course
     /55b65781e4b0b6741aad0395
     /assignment
     /9408d16e41fa11e5a151feff8
-    /stud
     /activity
     /8904d16e41fa11e5a151f8fef
     
