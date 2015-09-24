@@ -2026,7 +2026,7 @@ All resources are returned in JSON format.
 
 
 
-## Retrieve Assignment Group by course id and group id only if its modified since a given timestamp [/learningcontexts1/{contextType}/{contextId}/groups/{groupId}]
+## Retrieve Assignment Group by course id and group id only if its modified since a given timestamp [/learningcontexts1/{contextType}/{contextId}/groups/{groupId}?filter=updatedat::{timestamp}]
 ### Retrieve Assignment Group by course id and group id only if its modified since a given timestamp /learningcontexts/{contextType}/{contextId}/groups/{groupId} [GET]
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts/course
@@ -2039,6 +2039,11 @@ All resources are returned in JSON format.
     /55b65781e4b0b6741aad0395
     /groups
     /87b65781e4a0a6741apq0521
+    + filter=updatedat::{timestamp} (optional, String, `1440440596995`)
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups/87b65781e4a0a6741apq0521
+    ?filter=updatedat::1440440596995
 
 + Request
     + Headers
@@ -2056,8 +2061,34 @@ All resources are returned in JSON format.
     
     + Body
     
-            {
-                "value": "TBD"  
+             {
+                "ctrldAcsActivity": true,
+                "released": true,
+                "updatable": true,
+                "availabilityDate": 1440440596995,
+                "createdAt": 1440440596995,
+                "dueDate": 1440440596995,
+                "updatedAt": 1440440596995,
+                "pointsPossible": 123,
+                "ungradablePoints": 12,
+                "treeVersion": 1,
+                "version": 1,
+                "states": [],
+                "structureNodes": [],
+                "lookupMap": {},
+                "metadata": {},
+                "liveAssessments": [],
+                "sources": [],
+                "backgroundUri": "abc",
+                "bookId": "7890",
+                "description": "testMydd",
+                "externalId": "bacda414-4a97-11e5-885d-feff819cdc9f",
+                "launchUri": "Mdd",
+                "note": "MyNote",
+                "noteAuthor": "testMyNoteAuthor",
+                "thumbnailUri": "testMyThumbUri",
+                "title": "testMyTitle",
+                "type": "group"
             }
 
 + Response 400
