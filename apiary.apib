@@ -72,8 +72,8 @@ All resources are returned in JSON format.
 
 # Group Learning Resource
 
-## Retrieve Learning Resource by course id and  asignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/learningresources]
-### Retrieve assignment by given course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/learningresources [GET]
+## Retrieve Learning Resource by course id and  asignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}?expand= learningresource]
+### Retrieve assignment by given course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}? expand = learningresource [GET]
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts
     /course
@@ -85,7 +85,7 @@ All resources are returned in JSON format.
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /assignments
     /4072f9e0-4843-11e5-a151-feff819cdc9f
-    /learningresources
+     + expand: ?expand=true (optional)
     
 + Request
     + Headers
@@ -127,8 +127,8 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]   
 
 
-## Retrieve learning resource by course id, assignment id and activity id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activites/{activityId}/learningresources]
-### Retrieve learning resource by course id, assignment id and activity id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activites/{activityId}/learningresources [GET]
+## Retrieve learning resource by course id, assignment id and activity id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activites/{activityId}?expand=learningresource]
+### Retrieve learning resource by course id, assignment id and activity id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activites/{activityId}?expand=learningresource [GET]
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts
     /course
@@ -147,7 +147,7 @@ All resources are returned in JSON format.
     /4072f9e0-4843-11e5-a151-feff819cdc9f
     /activities
     /2704f9e0-4843-11e5-a151-feff819f9cdc
-    /learningresources
+     + expand: ?expand=learningResource (optional)
     
 + Request
     + Headers
