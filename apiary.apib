@@ -3621,22 +3621,22 @@ All resources are returned in JSON format.
 + Request
     + Headers
 
-        Correlation-Id: UUID
-        X-Authorization: PI Auth Token
-        accept: application/json
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
 
 + Response 200
     + Headers
 
-        Correlation-Id: UUID // matches request, or generated if not provided on request
-        content-type: application/json
-        Access-Control-Allow-Origin: *
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/json
+            Access-Control-Allow-Origin: *
 
     + Body
 
-        {
-        "id": 2000000000080
-        }
+            {
+                "id": 2000000000080
+            }
 
 + Response 404
     [Not Found Error][]
@@ -3644,63 +3644,6 @@ All resources are returned in JSON format.
     [Authentication Required Error][]
 + Response 403
     [Authorization Failed Error][]
-
-# Group Assignment Filtering
-
-
-# Group Assignment Actions
-
-# Group Assignment Synchronization
-
-# Group Assignment History
-
-# Group Assignment Library
-
-# Group Assignments
-## Retrieve three assignment id's by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/ids]
-### Retrieve three assignment id's by course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/ids [GET]
-
-+ Parameters
-    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
-    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /assignments
-    /http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Fffaefd90-7a42-4fe3-bb07-554e54c5c368
-    
-+ Request
-    + Headers
-    
-            Correlation-Id: UUID
-            X-Authorization: PI Auth Token
-            accept: application/json
-
-+ Response 200
-    + Headers
-    
-            Correlation-Id: UUID // matches request, or generated if not provided on request
-            content-type: application/hal+json
-            Access-Control-Allow-Origin: *
-
-    + Body
-            
-            {
-              "externalId" : "http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Fssaefd90-7a42-4fe3-bb07-554e54c5c368",
-              "BookAssignmentId" : "http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Fffaefd90-7a42-4fe3-bb07-554e54c5c368",
-              "NewAssignmentId" : "http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Faaaefd90-7a42-4fe3-bb07-554e54c5c368"
-    
-            }
-+ Response 404
-    [Not Found Error][]
-+ Response 401
-    [Authentication Required Error][]
-+ Response 403
-    [Authorization Failed Error][]  
-
-
-
-# Group Activities
 
 ## Retrieve activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activities]
 ### Retrieve activities by course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activities [GET]
@@ -3856,6 +3799,61 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]   
 
 
+
+
+
+# Group Assignment Filtering
+
+
+# Group Assignment Actions
+
+# Group Assignment Synchronization
+
+# Group Assignment History
+
+# Group Assignment Library
+
+# Group Assignments
+## Retrieve three assignment id's by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/ids]
+### Retrieve three assignment id's by course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/ids [GET]
+
++ Parameters
+    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
+    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /assignments
+    /http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Fffaefd90-7a42-4fe3-bb07-554e54c5c368
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            {
+              "externalId" : "http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Fssaefd90-7a42-4fe3-bb07-554e54c5c368",
+              "BookAssignmentId" : "http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Fffaefd90-7a42-4fe3-bb07-554e54c5c368",
+              "NewAssignmentId" : "http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Faaaefd90-7a42-4fe3-bb07-554e54c5c368"
+    
+            }
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]  
 
 
 # Group Gradebook Routes
