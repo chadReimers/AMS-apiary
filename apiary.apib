@@ -3495,8 +3495,8 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
-## retrieve course assignment group(root node | fulltree) and cancel marked for update status by given course id and assignment group id.  [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/state ]
-### retrieve course assignment group for update by given course id and assignment group id [POST] 
+## retrieve course assignment group(root node or fulltree) and cancel marked for update status by given course id and assignment group id.  [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/state ]
+### retrieve course assignment group(root node or fulltree) and cancel marked for update status by given course id and assignment group id. [POST] 
     
 + Parameters
     + contextType (required,string,`course,group`) ... /learningcontexts/course
@@ -3510,11 +3510,6 @@ All resources are returned in JSON format.
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups
     /bacda414-4a97-11e5-885d-feff819cdc9f
-    + format (optional,string,`fulltree`) 
-    Ex : /learningcontexts/course
-    /48d00f78-4a97-11e5-885d-feff819cdc9f 
-    /groups
-    /bacda414-4a97-11e5-885d-feff819cdc9f
     /state
     If accept header 'application/vnd.pearson.ams.gmd' is present then only the Group root node will be sent back.
     If accept header 'application/vnd.pearson.ams.gmd+fulltree' is present then Group and fulltree under it will be sent back.
@@ -3524,7 +3519,7 @@ All resources are returned in JSON format.
     
             Correlation-Id: UUID
             X-Authorization: PI Auth Token
-            accept: application/json 
+            accept: application/json, application/vnd.pearson.ams.gmd 
     
     + Body
     
