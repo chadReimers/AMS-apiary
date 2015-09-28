@@ -3409,21 +3409,20 @@ All resources are returned in JSON format.
 
 ## retrieve course assignment group "for update" OR "cancel marked for update" by given course id and assignment group id.  [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/state ]
 ### retrieve course assignment group "for update" OR "cancel marked for update" by given course id and assignment group id [POST] 
-    Payload for "for update" 
-            {
-                "updatable": true,
-                "released": false,
-                "locked": true,
-                "states": "UPDATABLE"
-            }
-
-    Payload for "cancel marked for update"        
-            {
-                "updatable": true,
-                "released": false,
-                "locked": true,
-                "states": "UPDATABLE"
-            }
+      
+        Payload for "for update" 
+                {
+                    "updatable": true,
+                    "released": false
+                    "states": "UPDATABLE"
+                }
+    
+        Payload for "cancel marked for update"        
+                {
+                    "updatable": false,
+                    "released": true
+                    "states": "RELEASED"
+                }
 + Parameters
     + contextType (required,string,`course,group`) ... /learningcontexts/course
     + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
