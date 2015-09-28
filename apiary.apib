@@ -3407,9 +3407,23 @@ All resources are returned in JSON format.
 
 # Group Assignment State Management
 
-## retrieve course assignment group "for update" OR "cancel marked for update" by given course id and assignment group id.  [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/state?format=fulltree ]
+## retrieve course assignment group "for update" OR "cancel marked for update" by given course id and assignment group id.  [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/state ]
 ### retrieve course assignment group "for update" OR "cancel marked for update" by given course id and assignment group id [POST] 
-    
+    Payload for "for update" 
+            {
+                "updatable": true,
+                "released": false,
+                "locked": true,
+                "states": "UPDATABLE"
+            }
+
+    Payload for "cancel marked for update"        
+            {
+                "updatable": true,
+                "released": false,
+                "locked": true,
+                "states": "UPDATABLE"
+            }
 + Parameters
     + contextType (required,string,`course,group`) ... /learningcontexts/course
     + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
@@ -3422,13 +3436,9 @@ All resources are returned in JSON format.
     /groups
     /bacda414-4a97-11e5-885d-feff819cdc9f
     /state
-    + format (optional,string,`fulltree`) 
-    Ex : /learningcontexts/course
-    /48d00f78-4a97-11e5-885d-feff819cdc9f 
-    /groups
-    /bacda414-4a97-11e5-885d-feff819cdc9f
-    /state?format=fulltree
-    If format is absent or has no value then only rotnode for group will be sent back.
+    <br/> If accept header 'application/vnd.pearson.ams.gmd' is present then only the Group root node will be sent back.
+    If accept header 'application/vnd.pearson.ams.gmd+fulltree' is present then Group and fulltree under it will be sent back.
+
 
 + Request
     + Headers
@@ -3495,87 +3505,6 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
-## retrieve course assignment group(root node or fulltree) and cancel marked for update status by given course id and assignment group id.  [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/state ]
-### retrieve course assignment group(root node or fulltree) and cancel marked for update status by given course id and assignment group id. [POST] 
-    
-+ Parameters
-    + contextType (required,string,`course,group`) ... /learningcontexts/course
-    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
-    contextId is the courseId from the related course context       
-    Ex : /learningcontexts/course
-    /48d00f78-4a97-11e5-885d-feff819cdc9f 
-    + groupId (required,string,`bacda414-4a97-11e5-885d-feff819cdc9f`) 
-    groupId is the 'externalId' of the group.
-    Ex : /learningcontexts/course
-    /48d00f78-4a97-11e5-885d-feff819cdc9f 
-    /groups
-    /bacda414-4a97-11e5-885d-feff819cdc9f
-    /state
-    If accept header 'application/vnd.pearson.ams.gmd' is present then only the Group root node will be sent back.
-    If accept header 'application/vnd.pearson.ams.gmd+fulltree' is present then Group and fulltree under it will be sent back.
-
-+ Request
-    + Headers
-    
-            Correlation-Id: UUID
-            X-Authorization: PI Auth Token
-            accept: application/json, application/vnd.pearson.ams.gmd 
-    
-    + Body
-    
-            {
-                "updatable": true,
-                "released": false
-                "states": "UPDATABLE"
-            }
-
-+ Response 200
-    + Headers
-    
-            Correlation-Id:UUID
-            Access-Control-Allow-Origin:*
-
-    + Body
-            
-             {
-                "id": 2000000000004,
-                "ctrldAcsActivity": true,
-                "released": false,
-                "updatable": true,
-                "availabilityDate": 1440440596995,
-                "createdAt": 1440440596995,
-                "dueDate": 1440440596995,
-                "updatedAt": 1440440596995,
-                "pointsPossible": 123,
-                "ungradablePoints": 12,
-                "treeVersion": 1,
-                "version": 1,
-                "states": [UPDATABLE],
-                "structureNodes": [],
-                "lookupMap": {},
-                "metadata": {},
-                "liveAssessments": [],
-                "sources": [],
-                "backgroundUri": "myBackgroundUrl",
-                "bookId": "7890",
-                "description": "MyDescription",
-                "externalId": "34567",
-                "launchUri": "MyLaunchUri",
-                "note": "MyNote",
-                "noteAuthor": "MyNoteAuthor",
-                "thumbnailUri": "MyThumbUri",
-                "title": "MyTitle",
-                "type": "group"
-            }
-
-+ Response 404
-    [Not Found Error][]
-
-+ Response 401
-    [Authentication Required Error][]
-
-+ Response 403
-    [Authorization Failed Error][]
 
 ## Mark an assignment group un-updatable and update availability date value by given course id and assignment group id.  [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/state ]
 ### Mark an assignment group un-updatable and update availability date value by given course id and assignment group id.  [POST] 
