@@ -2099,7 +2099,7 @@ All resources are returned in JSON format.
 
 
 
-## Retrieve Assignment Group by course id and group id only if its modified since a given timestamp [/learningcontexts1/{contextType}/{contextId}/groups/{groupId}?filter=updatedat::{timestamp}]
+## Retrieve Assignment Group by course id and group id only if its modified since a given timestamp [/learningcontexts1/{contextType}/{contextId}/groups/{groupId}?filter=updatedAt::{timestamp}]
 ### Retrieve Assignment Group by course id and group id only if its modified since a given timestamp /learningcontexts/{contextType}/{contextId}/groups/{groupId} [GET]
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts/course
@@ -2112,11 +2112,11 @@ All resources are returned in JSON format.
     /55b65781e4b0b6741aad0395
     /groups
     /87b65781e4a0a6741apq0521
-    + filter=updatedat::{timestamp} (required, String, `1440440596995`)
+    + filter=updatedAt::{timestamp} (required, String, `1440440596995`)
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups/87b65781e4a0a6741apq0521
-    ?filter=updatedat::1440440596995
+    ?filter=updatedAt::1440440596995
 
 + Request
     + Headers
@@ -3119,7 +3119,7 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
-## Retrieve Assignment Group full-tree by course id and group id only if its modified since a given timestamp [/learningcontexts1/{contextType}/{contextId}/groups/{groupId}?expand={boolean}&filter=updatedat::{timestamp}]
+## Retrieve Assignment Group full-tree by course id and group id only if its modified since a given timestamp [/learningcontexts1/{contextType}/{contextId}/groups/{groupId}?expand={boolean}&filter=updatedAt::{timestamp}]
 ### Retrieve Assignment Group gull-tree by course id and group id only if its modified since a given timestamp /learningcontexts/{contextType}/{contextId}/groups/{groupId} [GET]
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts/course
@@ -3137,11 +3137,11 @@ All resources are returned in JSON format.
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups/87b65781e4a0a6741apq0521
     ?expand=true    
-    + filter=updatedat::{timestamp} (required, String, `1440440596995`)
+    + filter=updatedAt::{timestamp} (required, String, `1440440596995`)
     Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
     /groups/87b65781e4a0a6741apq0521
-    ?filter=updatedat::1440440596995
+    ?filter=updatedAt::1440440596995
 
 + Request
     + Headers
