@@ -3594,6 +3594,86 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
+### Mark an assignment group releasd and un-released and update availability date value by given course id and assignment group id.  [POST] 
+    
++ Parameters
+    + contextType (required,string,`course,group`) ... /learningcontexts/course
+    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
+    contextId is the courseId from the related course context       
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    + groupId (required,string,`bacda414-4a97-11e5-885d-feff819cdc9f`) 
+    groupId is the 'externalId' of the group.<br/>Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /groups
+    /bacda414-4a97-11e5-885d-feff819cdc9f
+    /state
+    <br/> If accept header 'application/vnd.pearson.ams.gmd' is present then only the Group root node will be sent back.
+    If accept header 'application/vnd.pearson.ams.gmd+fulltree' is present then Group and fulltree under it will be sent back.
+
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json, application/vnd.pearson.ams.gmd
+    
+    + Body
+    
+            {
+                "updatable": true,
+                "released": false
+            }
+
+
++ Response 200
+    + Headers
+    
+            Correlation-Id:UUID
+            Access-Control-Allow-Origin:*
+
+    + Body
+            
+             {
+                "id": 2000000000004,
+                "ctrldAcsActivity": true,
+                "released": false,
+                "updatable": true,
+                "availabilityDate": 1440440596995,
+                "createdAt": 1440440596995,
+                "dueDate": 1440440596995,
+                "updatedAt": 1440440596995,
+                "pointsPossible": 123,
+                "ungradablePoints": 12,
+                "treeVersion": 1,
+                "version": 1,
+                "states": [UPDATABLE],
+                "structureNodes": [],
+                "lookupMap": {},
+                "metadata": {},
+                "liveAssessments": [],
+                "sources": [],
+                "backgroundUri": "myBackgroundUrl",
+                "bookId": "7890",
+                "description": "MyDescription",
+                "externalId": "34567",
+                "launchUri": "MyLaunchUri",
+                "note": "MyNote",
+                "noteAuthor": "MyNoteAuthor",
+                "thumbnailUri": "MyThumbUri",
+                "title": "MyTitle",
+                "type": "group"
+            }
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
+
 
 # Group Assignment Assessment Association
 ## Retrieve GroupId by course id, assignment id and activity id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activites/{activityId}/groupId]
