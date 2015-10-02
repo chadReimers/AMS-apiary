@@ -3744,16 +3744,22 @@ All resources are returned in JSON format.
       
         Payload for "for update" 
                 {
-                    "updatable": true,
+                    "state": {
+                        "type": "UPDATABLE",
+                        "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
+                        "updatable": true
+                    },
                     "released": false
-                    "states": "UPDATABLE"
                 }
     
-        Payload for "cancel marked for update"        
+        Payload for "cancel marked for update"
                 {
-                    "updatable": false,
+                    "state": {
+                        "type": "RELEASED",
+                        "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
+                        "updatable": false
+                    },
                     "released": true
-                    "states": "RELEASED"
                 }
 + Parameters
     + contextType (required,string,`course,group`) ... /learningcontexts/course
@@ -3776,15 +3782,17 @@ All resources are returned in JSON format.
     
             Correlation-Id: UUID
             X-Authorization: PI Auth Token
-            accept: application/json 
+            accept: application/vnd.pearson.ams.gmd, application/json 
     
     + Body
     
             {
-                "updatable": true,
-                "released": false,
-                "locked": true,
-                "states": "UPDATABLE"
+                "state": {
+                    "type": "RELEASED",
+                    "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
+                    "updatable": true
+                },
+                "released": false
             }
 
 
@@ -3863,7 +3871,11 @@ All resources are returned in JSON format.
     + Body
     
             {
-                "updatable": false,
+                "state": {
+                    "type": "UNUPDATABLE",
+                    "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
+                    "updatable": false
+                },
                 "released": true
             }
 
@@ -3916,7 +3928,7 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
-### Mark an assignment group releasd and un-released and update availability date value by given course id and assignment group id.  [POST] 
+### Mark an assignment group released and un-released and update availability date value by given course id and assignment group id.  [POST] 
     
 + Parameters
     + contextType (required,string,`course,group`) ... /learningcontexts/course
@@ -3943,13 +3955,21 @@ All resources are returned in JSON format.
     + Body
     
             {
-                "updatable": true,
-                "released": false
+                "state": {
+                    "type": "RELEASED",
+                    "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
+                    "updatable": false
+                },
+                "released": true
             }
 
             {
-                "updatable": false,
-                "released": true
+                "state": {
+                    "type": "UPDATABLE",
+                    "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
+                    "updatable": true
+                },
+                "released": false
             }
 
 
