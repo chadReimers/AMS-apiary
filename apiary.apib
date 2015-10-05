@@ -3746,20 +3746,28 @@ All resources are returned in JSON format.
                 {
                     "state": {
                         "type": "UPDATABLE",
+                        "updatedAt": 1440440596995,
                         "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
                         "updatable": true
                     },
-                    "released": false
+                    "availabilityDate": 1440440596995,
+                    "cascadableState": {
+                        "released": true
+                    }
                 }
     
         Payload for "cancel marked for update"
                 {
                     "state": {
                         "type": "RELEASED",
+                        "updatedAt": 1440440596995,
                         "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
                         "updatable": false
                     },
-                    "released": true
+                    "availabilityDate": 1440440596995,
+                    "cascadableState": {
+                        "released": false
+                    }
                 }
 + Parameters
     + contextType (required,string,`course,group`) ... /learningcontexts/course
@@ -3789,10 +3797,14 @@ All resources are returned in JSON format.
             {
                 "state": {
                     "type": "RELEASED",
+                    "updatedAt": 1440440596995,
                     "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
-                    "updatable": true
+                    "updatable": false
                 },
-                "released": false
+                "availabilityDate": 1440440596995,
+                "cascadableState": {
+                    "released": false
+                }
             }
 
 
@@ -3873,10 +3885,14 @@ All resources are returned in JSON format.
             {
                 "state": {
                     "type": "UNUPDATABLE",
+                    "updatedAt": 1440440596995,
                     "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
                     "updatable": false
                 },
-                "released": true
+                "availabilityDate": 1440440596995,
+                "cascadableState": {
+                    "released": true
+                }
             }
 
 
@@ -3891,7 +3907,7 @@ All resources are returned in JSON format.
              {
                 "id": 2000000000004,
                 "ctrldAcsActivity": true,
-                "released": false,
+                "released": true,
                 "updatable": true,
                 "availabilityDate": 1440440596995,
                 "createdAt": 1440440596995,
@@ -3957,19 +3973,25 @@ All resources are returned in JSON format.
             {
                 "state": {
                     "type": "RELEASED",
+                    "updatedAt": 1440440596995,
                     "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
                     "updatable": false
                 },
-                "released": true
+                "cascadableState": {
+                    "released": true
+                }
             }
 
             {
                 "state": {
                     "type": "UPDATABLE",
+                    "updatedAt": 1440440596995,
                     "updatedBy": "ffffffff532b3a55e4b0875ee2253e38",
                     "updatable": true
                 },
-                "released": false
+                "cascadableState": {
+                    "released": false
+                }
             }
 
 
