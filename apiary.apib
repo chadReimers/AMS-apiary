@@ -4268,6 +4268,36 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]  
 
+## Delete Assignment and Activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}]
+### Delete Assignment and Activities associated to the assignment [DELETE]
+
++ Parameters
+  + contextType: book (required, string) - context-type (e.g. "book", "course", "group", etc.)
+  + contextId:   ba1290d2-f03e-4550-9089-94390a6bc9a6 (required, string) - course-ID or book-ID
+  + assignmentId: http://paf.revel.com/1234/activities/12344
+  
+     If assignmentId is matches with BookAssignmentId, we will not be deleting the information.
+     If assignment is same as InstructorAssignmentId, we will be deleting both instructor and student assignment information.
+     If assignment is same as studentAssignmentId, we will be deleting student assignment information only.
+
+  
++ Request
+    + Headers
+    
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json 
+        
++ Response 204 
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
 
 # Group Gradebook Routes
 ## Retrieve assignment by course id and  asignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}]
