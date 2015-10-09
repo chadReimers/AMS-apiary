@@ -1178,9 +1178,8 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]
 
 
-## Delete Nodes and Sub Nodes [/learningcontexts/{contextType}/{contextId}/nodes]
-### Deleting individual nodes (and all sub nodes) for specified learningContext and node Ids /learningcontexts/{contextType}/{contextId}/nodes [DELETE]
-
+### Deleting individual nodes and all sub nodes for specified learningContext and node Ids /learningcontexts/{contextType}/{contextId}/nodes [DELETE]
+    
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts/course
     + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
@@ -1189,8 +1188,25 @@ All resources are returned in JSON format.
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
      Ex : /learningcontexts/course
     /48d00f78-4a97-11e5-885d-feff819cdc9f 
-    /nodes
+    /structures
+    
++ Request
+    + Headers
+    
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json
 
++ Response 204
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
 
 
 # Group Assignment Group Top-Level
