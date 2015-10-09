@@ -1177,8 +1177,8 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
-
-### Deleting individual nodes and all sub nodes for specified learningContext and node Ids /learningcontexts/{contextType}/{contextId}/nodes [DELETE]
+## Delete Structure Nodes [/learningcontexts/{contextType}/{contextId}/nodes]
+### Deleting individual nodes and all sub nodes for specified learningContext and external asset Ids /learningcontexts/{contextType}/{contextId}/nodes [DELETE]
     
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts/course
@@ -1196,7 +1196,14 @@ All resources are returned in JSON format.
             Correlation-Id : UUID
             X-Authorization: PI Auth Token
             accept : application/json
-
+    + Body
+    
+             {
+                "externalIds": [
+                    "2",
+                    "3"
+                ]
+             }
 + Response 204
 
 + Response 404
