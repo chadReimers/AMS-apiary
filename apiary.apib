@@ -4299,11 +4299,11 @@ All resources are returned in JSON format.
     + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
     /55b65781e4b0b6741aad0395
     /groups
-    + assignmentGroupId (required, string, `132131231232132112`)... Ex: /learningcontexts/course/55b65781e4b0b6741aad0395
-    /groups/132131231232132112
+    + assignmentGroupId (required, string, `1234`)... Ex: /learningcontexts/course/55b65781e4b0b6741aad0395
+    /groups/1234
     /assignments
     + assignmentId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395/groups/132131231232132112/assignments
+    /55b65781e4b0b6741aad0395/groups/1234/assignments
     /http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Fffaefd90-7a42-4fe3-bb07-554e54c5c368
     /activities
     
@@ -4324,11 +4324,61 @@ All resources are returned in JSON format.
     + Body
             
             {
-              "externalId" : "http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Fssaefd90-7a42-4fe3-bb07-554e54c5c368",
-              "BookAssignmentId" : "http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Fffaefd90-7a42-4fe3-bb07-554e54c5c368",
-              "NewAssignmentId" : "http%3A%2F%2F%2Frepo.paf.cert.pearsoncmg.com%2Fpaf-repo%2Fresources%2Factivities%2Faaaefd90-7a42-4fe3-bb07-554e54c5c368"
-    
+              "id": 1000000000293,
+                    "gradable": false,
+                    "hidden": false,
+                    "pointsPossible": 83,
+                    "ungradablePoints": 50,
+                    "activities": [
+                        {
+                            "id": 1000000000294,
+                            "excluded": false,
+                            "gradable": true,
+                            "hidden": false,
+                            "pointsPossible": 23,
+                            "ungradablePoints": 41,
+                            "activityId": "http://repo.6SVpf.pearsoncmg.com/GQi-repo/resources/assignments/7391c115-8130-4f1c-a295-9bf78d86a978...",
+                            "itemUri": "http://www.6ENo3.com/ZGp43",
+                            "originalActivityId": "http://repo.Uq4ly.pearsoncmg.com/9yH-repo/resources/assignments/22cc7700-b831-4863-8140-143003c4edd8...",
+                            "subType": "AMS-Integration-cvPLz",
+                            "shortTitle": "AMS-Integration-jlGEU",
+                            "title": "AMS-Integration-fqhRS",
+                            "type": "AMS-Integration-yRQMh"
+                        },
+                        {
+                            "id": 1000000000295,
+                            "excluded": false,
+                            "gradable": true,
+                            "hidden": false,
+                            "pointsPossible": 23,
+                            "ungradablePoints": 41,
+                            "activityId": "http://repo.2323Vpf.pearsoncmg.com/GQi-repo/resources/assignments/7391c115-8130-4f1c-a295-9bf78d86a978...",
+                            "itemUri": "http://www.6ENo3.com/ZGp43",
+                            "originalActivityId": "http://repo.232q4ly.pearsoncmg.com/9yH-repo/resources/assignments/22cc7700-b831-4863-8140-143003c4edd8...",
+                            "subType": "AMS-Integration-cvPL1z",
+                            "shortTitle": "AMS-Integration-jlGEU",
+                            "title": "AMS-Integration-Activity-fqhRS",
+                            "type": "AMS-Integration-Activity - yRQMh"
+                        }
+                    ],
+                    "assignmentId": "http://repo.h8i5D.pearsoncmg.com/CKg",
+                    "assignmentPartId": "http://repo.mAVoU.pearsoncmg.com/YQQ",
+                    "bookAssignmentId": "http://repo.RzSdt.pearsoncmg.com/4l1",
+                    "category": {
+                        "title": "AMS-Integration-ZKDDA",
+                        "contextId": "108",
+                        "weight": 37
+                    },
+                    "itemUri": "http://repo.3mZil.pearsoncmg.com/llh-repo/resources/assignments/b6e90e01-4979-4605-9f26-25cdd8810e21...",
+                    "newAssignmentId": "http://repo.u5d7V.pearsoncmg.com/ax7",
+                    "parentAssignmentId": "http://repo.htzBv.pearsoncmg.com/6Qk",
+                    "shortTitle": "AMS-Integration-1oXZQ",
+                    "source": "AMS-Integration-7NCTz",
+                    "subType": "AMS-Integration-IObuk",
+                    "title": "AMS-Integration-PwoH3",
+                    "type": "AMS-Integration-XL5LD"
             }
+            
 + Response 404
     [Not Found Error][]
 + Response 401
