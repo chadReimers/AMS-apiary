@@ -1955,59 +1955,6 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
-## Retrieve Assignment Group Node critical attributes by course id , group id and type [/learningcontexts/{contextType}/{contextId}/groups/{groupId}/type/{type}{?fields}]
-### Retrieve Assignment Group Node critical attributes by given course id , group id and type /learningcontexts/{contextType}/{contextId}/groups/{groupId}/type/{type}{?fields} [GET]
-
-+ Parameters
-    + contextType (required, string, `course`)... Ex: /learningcontexts/group/
-    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    + groupId (required, string, `88b65781e4amz6745axx0912`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /groups
-    /88b65781e4amz6745axx0912
-    + type (required, string, `group`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /groups
-    /88b65781e4amz6745axx0912
-    /type
-    /Revel
-    + fields (optional, string) ...Ex:/learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    /groups
-    /88b65781e4amz6745axx0912
-    /type
-    /group?fields=id|dueDate|availabilityDate
-    |updatable|locked
-    |pointsPossible|version
- 
-+ Request
-    + Headers
-    
-            Correlation-Id: UUID
-            X-Authorization: PI Auth Token
-            accept: application/json
-
-+ Response 200
-    + Headers
-    
-            Correlation-Id: UUID // matches request, or generated if not provided on request
-            content-type: application/hal+json
-            Access-Control-Allow-Origin: *
-
-    + Body
-            
-            {
-                  "value": "TBD"  
-            }                
-
-+ Response 404
-    [Not Found Error][]
-+ Response 401
-    [Authentication Required Error][]
-+ Response 403
-    [Authorization Failed Error][]
-
 
 
 ## Retrieve assignment group id by course id , due date and type [/learningcontexts/{contextType}/{contextId}/due/{dueDate}/type/{typeName}]
