@@ -1957,49 +1957,6 @@ All resources are returned in JSON format.
 
 
 
-## Retrieve assignment group id by course id , due date and type [/learningcontexts/{contextType}/{contextId}/due/{dueDate}/type/{typeName}]
-### Retrieve assignment group id by given course id and due date, type &nbsp&nbsp-&nbsp&nbsp /learningcontexts/{contextType}/{contextId}/due/{dueDate}/type/{typeName} [GET]
-
-+ Parameters
-    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
-    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-    + dueDate (required, timestamp, `1438296821`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-/due/1438296821/
-    + typeName (required, String, `assignment`)... Ex: /learningcontexts/course
-    /55b65781e4b0b6741aad0395
-/due/1438296821/type
-/assignment
- 
-    
-+ Request
-    + Headers
-    
-            Correlation-Id: UUID
-            X-Authorization: PI Auth Token
-            accept: application/hal+json
-
-+ Response 200
-    + Headers
-    
-            Correlation-Id: UUID // matches request, or generated if not provided on request
-            content-type: application/hal+json
-            Access-Control-Allow-Origin: *
-
-    + Body
-            
-            {
-                  "value": "TBD"  
-            }
-+ Response 404
-    [Not Found Error][]
-+ Response 401
-    [Authentication Required Error][]
-+ Response 403
-    [Authorization Failed Error][]            
-
-
 ## Retrieve Assignment Group list by course id [/learningcontexts/{contextType}/{contextId}/groups]
 ### Retrieve Assignment Group list by given course id /learningcontexts/{contextType}/{contextId}/groups [GET]
 
