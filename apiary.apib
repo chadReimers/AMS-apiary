@@ -4290,6 +4290,67 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]  
 
+## Retrieve Assignment and Activities with in the AssignmentGroup by course id and learning resource id and assignment group id [/learningcontexts/{contextType}/{contextId}/groups/{assignmentGroupId}/learningresources/{learningResourceId}/assignments]
+### Retrieve Assignment and Activities with in the AssignmentGroup by course id and learning resource id and assignment group id /learningcontexts/{contextType}/{contextId}/groups/{assignmentGroupId}/learningresources/{learningResourceId}/assignments [GET]
+
++ Parameters
+    + contextType (required, string, `course`)... Ex: /learningcontexts/course/
+    + contextId (required, string, `55b65781e4b0b6741aad0395`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395
+    /groups
+    + assignmentGroupId (required, string, `1234`)... Ex: /learningcontexts/course/55b65781e4b0b6741aad0395
+    /groups/1234
+    /learningresources
+    + learningResourceId (required, string, `9408d16e41fa11e5a151feff8`)... Ex: /learningcontexts/course
+    /55b65781e4b0b6741aad0395/groups/1234/learningresources
+    /abc123zyx987/assignments
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+    
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/hal+json
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            {
+                "id": 2000000000005,
+                "activities": [
+                    {
+                        "id": 2000000000006,
+                        "activityId": "IAMNO2",
+                        "title": "activity 2"
+                    },
+                    {
+                        "id": 2000000000007,
+                        "activityId": "IAMNO3",
+                        "title": "activity 3"
+                    }
+                ],
+                "bookAssignmentId": "UARENO2",
+                "category": {
+                    "title": "HW2",
+                    "contextId": "WHENTHELEVEEBREAKS",
+                    "weight": 20
+                },
+                "title": "assignment 2"
+            }
+            
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]  
+
 ## Delete Assignment and Activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}]
 ### Delete Assignment and Activities associated to the assignment [DELETE]
 
