@@ -4457,21 +4457,24 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]
 
 ## Save Assignments and Activities by course id and LearningResource(ItemId) [/learningcontexts/{contextType}/{contextId}/assignments]
-### Save Assignments under a LearningResource [PUT]
+### Save Assignments and activities under a LearningResource [PUT]
 
 + Parameters
   + contextType: course (required, string) - context-type (e.g. "book", "course", "group", etc.)
   + contextId:   ba1290d2-f03e-4550-9089-94390a6bc9a6 (required, string) - course-ID or book-ID
   
      NOTE: 
-         Save assignments under a Learning Resource.  The allowed assignments are either 
+        Save assignments under a Learning Resource.  The allowed assignments are either 
      instructor or student type assignments.  These are indicated by the contentTarget attribute in the 
      Assignment.  ContentTarget in this case can have values 'inst' or 'stud'.  Each inst or stud assignment
      should include the 'bookAssignmentId'.  The inst assignment should also include the instructor's 'assignmentId'.
      The stud assignment should also include the student's 'newAssignmentId'.
-         If activities are specified then they will be updated as specified in the  payload.  If activities are
+        If activities are specified then they will be updated as specified in the  payload.  If activities are
      not specified then they will be deleted for that specific copy of the assignment.  In other words if activities
      are not specified for the Instructor's assignment then they will be deleted under the Instructor's assignment in AMS.
+        If the Instructor or Student's assignment Id in th ePayload is different than what was saved previously in 
+    AMS, then then new assignment ids will be updated in AMS.  Also the data for the LearningResource will not be 
+    updated as part of this route.
 
   
 + Request
@@ -4480,6 +4483,115 @@ All resources are returned in JSON format.
             Correlation-Id : UUID
             X-Authorization: PI Auth Token
             accept : application/json 
+
+    + Body
+    
+    {
+        "learningResources": [
+            {
+                "level": 2,
+                "assignments": [
+                    {
+                        "bookAssignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368-book",
+                        "assignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368-inst",
+                        "activities": [
+                            {
+                                "excluded": false,
+                                "gradable": true,
+                                "hidden": false,
+                                "pointsPossible": 0,
+                                "ungradablePoints": 0,
+                                "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e401",
+                                "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e401",
+                                "subType": "mca",
+                                "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 1",
+                                "type": "module_quiz"
+                            },
+                            {
+                                "excluded": false,
+                                "gradable": true,
+                                "hidden": false,
+                                "pointsPossible": 0,
+                                "ungradablePoints": 0,
+                                "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e402",
+                                "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e402",
+                                "subType": "mca",
+                                "title": "Quiz: 0.2 The Power of Art and the Impact of Context, question 2",
+                                "type": "module_quiz"
+                            },
+                            {
+                                "excluded": true,
+                                "gradable": true,
+                                "hidden": false,
+                                "pointsPossible": 0,
+                                "ungradablePoints": 0,
+                                "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e403",
+                                "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e403",
+                                "subType": "mca",
+                                "title": "Quiz: 0.3 The Power of Art and the Impact of Context, question 3",
+                                "type": "module_quiz"
+                            }
+                        ],
+                        "gradable": true,
+                        "hidden": false,
+                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                        "pointsPossible": 0,
+                        "ungradablePoints": 0,
+                        "source": "PAF",
+                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context-Updated-inst-1",
+                        "contentTarget": "inst",
+                        "locked": false
+                    },
+                    {
+                        "bookAssignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368-book",
+                        "newAssignmentId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368-stud",
+                        "activities": [
+                            {
+                                "excluded": false,
+                                "gradable": true,
+                                "hidden": false,
+                                "pointsPossible": 0,
+                                "ungradablePoints": 0,
+                                "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e401",
+                                "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e401",
+                                "subType": "mca",
+                                "title": "Quiz: 0.1 The Power of Art and the Impact of Context, question 1",
+                                "type": "module_quiz"
+                            },
+                            {
+                                "excluded": false,
+                                "gradable": true,
+                                "hidden": false,
+                                "pointsPossible": 0,
+                                "ungradablePoints": 0,
+                                "activityId": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e402",
+                                "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/709c21bf-3b51-4c5e-98d0-83aea2a2e402",
+                                "subType": "mca",
+                                "title": "Quiz: 0.2 The Power of Art and the Impact of Context, question 2",
+                                "type": "module_quiz"
+                            }
+                        ],
+                        "gradable": true,
+                        "hidden": false,
+                        "itemUri": "http://repo.paf.cert.pearsoncmg.com/paf-repo/resources/activities/ffaefd90-7a42-4fe3-bb07-554e54c5c368",
+                        "pointsPossible": 0,
+                        "ungradablePoints": 0,
+                        "source": "PAF",
+                        "title": "Quiz: 0.1 The Power of Art and the Impact of Context-Updated-stud-1",
+                        "contentTarget": "stud",
+                        "locked": false
+                    }
+                ],
+                "learningAids": [],
+                "learningObjectives": [],
+                "metadata": {},
+                "playerSettings": {},
+                "itemId": "add79dd30690ea53c964552276f5f8500cee9be24",
+                "parentItemId": "a65c47fed46b9dd9074956d0dbfda5fd043f4a92d",
+                "seqNbr": "8"
+            }
+        ]
+    }
         
 + Response 204 
 
