@@ -1564,6 +1564,76 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
+## Retrieve Assignment Groups by course id and filter by date range [/learningcontexts/{contextType}/{contextId}/groups?filter=dateRangeStart::{startDate},dateRangeEnd::{endDate}]
+### Retrieve Assignment Groups by course id and filter by date range [GET] 
+#### Must specify dateRangeStart, dateRangeEnd, or both. This filter should not be used with other filters or sorting.
+
++ Parameters
+    + contextType (required,string,`course`) ... /learningcontexts/course
+    + contextId (required,string,`48d00f78-4a97-11e5-885d-feff819cdc9f`) 
+        contextId is the courseId from the related course context  
+    + filter (optional, string, `filter=dateRangeStart::1440440596995,dateRangeEnd::1440440696995`)
+      Ex : /learningcontexts/course
+      /48d00f78-4a97-11e5-885d-feff819cdc9f 
+      /groups
+      ?filter=dateRangeStart::1440440596995,dateRangeEnd::1440440696995
+
++ Request
+    + Headers
+    
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json
+
+
+    + Body
+    
+              {
+                "learningContextId": 2000000000002,
+                "ctrldAcsActivity": true,
+                "released": true,
+                "updatable": true,
+                "availabilityDate": 1440440597000,
+                "createdAt": 1438408800000,
+                "dueDate": 1440440597000,
+                "updatedAt": 1441232046000,
+                "pointsPossible": 123,
+                "ungradablePoints": 12,
+                "treeVersion": 1,
+                "version": 1,
+                "states": [],
+                "structureNodes": [],
+                "lookupMap": {},
+                "metadata": {},
+                "liveAssessments": [
+                    "http: //www.amad_2",
+                    "http: //www.amstea_1"
+                ],
+                "sources": [
+                    "http: //www.amad_2",
+                    "http: //www.amstea_1"
+                ],
+                "backgroundUri": "testmyBackgroundUrl",
+                "bookId": "7890",
+                "description": "testMyDescription",
+                "externalId": "bacda414-4a97-11e5-885d-feff819cdc9f",
+                "launchUri": "MyaaLaurai",
+                "note": "MyNote",
+                "noteAuthor": "testMyNoteAuthor",
+                "thumbnailUri": "testMyThumbUri",
+                "title": "Revel",
+                "type": "group"
+            }
++ Response 204
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
 
 ## Retrieve Assignment Groups by course id and filter by type order by due date [/learningcontexts/{contextType}/{contextId}/groups?sort=dueDate&filter=type::{type}]
 ### Retrieve Assignment Groups by course id and filter by type order by due date [GET] 
