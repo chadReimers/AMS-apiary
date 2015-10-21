@@ -4460,9 +4460,6 @@ All resources are returned in JSON format.
 ## Save Assignments and Activities by course id under LearningResource [/learningcontexts/{contextType}/{contextId}/assignments]
 ### Save Assignments and activities under a LearningResource [PUT]
 
-+ Parameters
-  + contextType: course (required, string) - context-type (e.g. "book", "course", "group", etc.)
-  + contextId:   ba1290d2-f03e-4550-9089-94390a6bc9a6 (required, string) - course-ID or book-ID
   
      NOTE: 
         Save assignments under a Learning Resource.  The allowed assignments are either 
@@ -4476,6 +4473,11 @@ All resources are returned in JSON format.
         If the Instructor or Student's assignment Id in th ePayload is different than what was saved previously in 
     AMS, then then new assignment ids will be updated in AMS.  Also the data for the LearningResource will not be 
     updated as part of this route.
+
+
++ Parameters
+  + contextType: course (required, string) - context-type (e.g. "book", "course", "group", etc.)
+  + contextId:   ba1290d2-f03e-4550-9089-94390a6bc9a6 (required, string) - course-ID or book-ID
 
   
 + Request
