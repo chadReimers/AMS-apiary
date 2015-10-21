@@ -223,8 +223,8 @@ All resources are returned in JSON format.
 
 
 
-## Retrieve, Update and Delete Toplevel LearningContext [/learningcontexts/{contextType}/{contextId}]
-### Retrieve a specific toplevel LearningContext [GET]
+## Retrieve Toplevel LearningContext [/learningcontexts/{contextType}/{contextId}?contentTarget = stud]
+### Retrieve a specific toplevel LearningContext /learningcontexts/{contextType}/{contextId}?contentTarget = stud [GET]
 
 + Parameters
     + contextType: book (required, string) - context-type (e.g. "book", "course", "group", etc.)
@@ -247,6 +247,7 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]            
 
+#Update and Delete Toplevel LearningContext [/learningcontexts/{contextType}/{contextId}]
 ### Update an exsting toplevel LearningContext [PUT]
 
 + Parameters
