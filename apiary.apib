@@ -4456,6 +4456,42 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
+## Save Assignments and Activities by course id and LearningResource(ItemId) [/learningcontexts/{contextType}/{contextId}/assignments]
+### Save Assignments under a LearningResource [PUT]
+
++ Parameters
+  + contextType: course (required, string) - context-type (e.g. "book", "course", "group", etc.)
+  + contextId:   ba1290d2-f03e-4550-9089-94390a6bc9a6 (required, string) - course-ID or book-ID
+  
+     NOTE: 
+         Save assignments under a Learning Resource.  The allowed assignments are either 
+     instructor or student type assignments.  These are indicated by the contentTarget attribute in the 
+     Assignment.  ContentTarget in this case can have values 'inst' or 'stud'.  Each inst or stud assignment
+     should include the 'bookAssignmentId'.  The inst assignment should also include the instructor's 'assignmentId'.
+     The stud assignment should also include the student's 'newAssignmentId'.
+         If activities are specified then they will be updated as specified in the  payload.  If activities are
+     not specified then they will be deleted for that specific copy of the assignment.  In other words if activities
+     are not specified for the Instructor's assignment then they will be deleted under the Instructor's assignment in AMS.
+
+  
++ Request
+    + Headers
+    
+            Correlation-Id : UUID
+            X-Authorization: PI Auth Token
+            accept : application/json 
+        
++ Response 204 
+
++ Response 404
+    [Not Found Error][]
+
++ Response 401
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
+
 # Group Gradebook Routes
 ## Retrieve assignment by course id and  asignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}]
 ### Retrieve assignment by given course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId} [GET]
