@@ -229,7 +229,7 @@ All resources are returned in JSON format.
 + Parameters
     + contextType: book (required, string) - context-type (e.g. "book", "course", "group", etc.)
     + contextId: ba1290d2-f03e-4550-9089-94390a6bc9a6 (required, string) - course-ID or book-ID
-    + contentTarget: ?contentTarget=inst(instructor) or contentTarget=stud(student) or contentTarget=book (optional)
+    + contentTarget: ?contentTarget=inst(instructor) or contentTarget=stud(student) or contentTarget=book (optional) - Either you should apply expand or contentTarget not both. 
     
 + Response 200 (application/json)
 
@@ -711,13 +711,14 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]           
 
-## Retrieve, Update and Delete a LearningContext [/learningcontexts/{contextType}/{contextId}?expand={true|false}]
+## Retrieve, Update and Delete a LearningContext [/learningcontexts/{contextType}/{contextId}?contentTarget=inst&expand={true|false}]
 ### Retrieve TOC fulltree [GET]
 
 + Parameters
     + contextType: course (required, string) - context-type (e.g. "book", "course", "group", etc.)
     + contextId: 2001 (required, string) - course-ID or book-ID
     + expand: ?expand=true (optional, boolean) - Expand to retrieve Fulltree.  Default(or absence) is false
+    + contentTarget ?contentTarget=inst(Instructor) or stud(student) or book (optional) - Either you should apply expand or contentTarget not both. 
     
 + Response 200 (application/json)
 
