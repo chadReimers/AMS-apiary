@@ -4091,6 +4091,48 @@ All resources are returned in JSON format.
 + Response 403
     [Authorization Failed Error][]
 
+## Retrieve GroupId by course id, assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/groupId]
+### Retrieve GroupId by course id, assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/groupId [GET]
++ Parameters
+    + contextType (required,string,`course`) ... /learningcontexts
+    /course
+    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts
+    /course
+    /4072f6d4-4843-11e5-a151-feff819cdc9f
+    + assignmentId (required, string, `4072f9e0-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts
+    /course
+    /4072f6d4-4843-11e5-a151-feff819cdc9f
+    /assignments
+    /4072f9e0-4843-11e5-a151-feff819cdc9f
+/groupId
+
++ Request
+    + Headers
+
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+
++ Response 200
+    + Headers
+
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                "id": 2000000000080
+            }
+
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]
+
 ## Retrieve activities by course id and  assignment id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activities]
 ### Retrieve activities by course id and assignment id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activities [GET]
 
