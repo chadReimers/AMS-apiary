@@ -4770,8 +4770,12 @@ All resources are returned in JSON format.
     [Authorization Failed Error][]   
           
 
-## Retrieve list of assignment and dueDate information by given course id , order by due date expand assignments [/learningcontexts/{contextType}/{contextId}/assignments?sort=dueDate]
+## Retrieve list of assignment and dueDate information by given course id , order by due date expand assignments [/learningcontexts/{contextType}/{contextId}/assignments?sort=dueDate&filter=::contentTarget::stud]
 ### Retrieve list of assignment and dueDate information by given course id , order by due date expand assignments [GET]
+NOTE:
+        If filter is not specified correctly i.e filter=contentTarget:: , then it'd return all the assignments with the dueDate.
+    This route does not return any activities. We are supporting the following filter parameters prof or stud or book. 
+    
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts
     /course
@@ -4780,7 +4784,8 @@ All resources are returned in JSON format.
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /assignments
     ?sort=dueDate (required)
-    
+    ?filter=contentTarget::prof (or stud or book) (optional)
+
 + Request
     + Headers
     
@@ -4858,6 +4863,10 @@ All resources are returned in JSON format.
 
 ## Retrieve assignments by course id order by category, order by due date,order by level,order by sequence number [/learningcontexts/{contextType}/{contextId}/assignments?sort=category|dueDate|level|sequenceNumber]
 ### Retrieve assignments by given course id order by category,order by due date,order by level,order by sequence number /learningcontexts/{contextType}/{contextId}/assignments?sort=category|dueDate|level|sequenceNumber [GET]
+NOTE:
+        If filter is not specified correctly i.e filter=contentTarget:: , then it'd return all the assignments with the dueDate.
+    This route does not return any activities. We are supporting the following filter parameters prof or stud or book. 
+    
 + Parameters
     + contextType (required,string,`course`) ... /learningcontexts
     /course
@@ -4866,7 +4875,8 @@ All resources are returned in JSON format.
     /4072f6d4-4843-11e5-a151-feff819cdc9f
     /assignments
     ?sort=category|dueDate
-    |level|sequenceNumber
+    |level|sequenceNumber    (required)
+    ?filter=contentTarget::prof (or stud or book) (optional)
    
     
 + Request
