@@ -4861,8 +4861,8 @@ NOTE:
     [Authorization Failed Error][] 
 
 
-## Retrieve assignments by course id order by category, order by due date,order by level,order by sequence number [/learningcontexts/{contextType}/{contextId}/assignments?sort=category|dueDate|level|sequenceNumber]
-### Retrieve assignments by given course id order by category,order by due date,order by level,order by sequence number /learningcontexts/{contextType}/{contextId}/assignments?sort=category|dueDate|level|sequenceNumber [GET]
+## Retrieve assignments by course id order by category, order by due date,order by level,order by sequence number [/learningcontexts/{contextType}/{contextId}/assignments?sort=category|dueDate|level|sequenceNumber&filter=contentTarget::prof]
+### Retrieve assignments by given course id order by category,order by due date,order by level,order by sequence number /learningcontexts/{contextType}/{contextId}/assignments?sort=category|dueDate|level|sequenceNumber&filter=contentTarget::prof [GET]
 NOTE:
         If filter is not specified correctly i.e filter=contentTarget:: , then it'd return all the assignments with the dueDate.
     This route does not return any activities. We are supporting the following filter parameters prof or stud or book. 
