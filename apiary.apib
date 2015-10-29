@@ -4042,6 +4042,81 @@ All resources are returned in JSON format.
 
 
 # Group Assignment Assessment Association
+## Retrieve all GroupId's by course id, asset id's [/learningcontexts/{contextType}/{contextId}/structures/assetidlist?filter=type::{groupType}]
+### Retrieve GroupId by course id, assignment id and activity id /learningcontexts/{contextType}/{contextId}/structures/assetidlist?filter=type::{groupType} [POST]
++ Parameters
+    + contextType (required,string,`course`) ... /learningcontexts
+    /course
+    + contextId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... Ex: /learningcontexts
+    /course
+    /4072f6d4-4843-11e5-a151-feff819cdc9f
+    /structures
+    /assetidlist
+    + filter=type::{groupType} (optional, String, `revel`)
+    Ex : /learningcontexts/course
+    /48d00f78-4a97-11e5-885d-feff819cdc9f 
+    /structures
+    /assetidlist
+    ?filter=type::revel
++ Request
+    + Headers
+
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            accept: application/json
+            
+    + body 
+    
+            {
+                    "assetIds":[
+                {
+                    "assetId":"bacda414-4a97-11e5-885d-feff819cdc9f"
+                },
+                {
+                    "assetId":"adcab414-4a97-11e5-885d-feff819cdc9f"
+                },
+                {
+                    "assetId":"bdcaa414-4a97-11e5-885d-feff819cdc9f"
+                }
+                ]
+            
+            }
+
++ Response 200
+    + Headers
+
+            Correlation-Id: UUID // matches request, or generated if not provided on request
+            content-type: application/json
+            Access-Control-Allow-Origin: *
+
+
+    + Body
+
+               {
+                        "groupDTO":[
+                    {
+                        "id":2000000000080
+                    },
+                    {
+                        "id":2000000000081
+                    },
+                    {
+                        "id":2000000000082
+                    }
+                    ]
+               }
+
++ Response 404
+    [Not Found Error][]
++ Response 401
+    [Authentication Required Error][]
++ Response 403
+    [Authorization Failed Error][]
+
+
+
+
+
 ## Retrieve GroupId by course id, assignment id and activity id [/learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activites/{activityId}/groupId]
 ### Retrieve GroupId by course id, assignment id and activity id /learningcontexts/{contextType}/{contextId}/assignments/{assignmentId}/activites/{activityId}/groupId [GET]
 + Parameters
