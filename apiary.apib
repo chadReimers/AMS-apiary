@@ -102,8 +102,9 @@ All resources are returned in JSON format.
             Access-Control-Allow-Origin: *
 
     + Body
-            
-             {
+
+            [            
+              {
                 "id": 2000000000080,
                 "excluded": false,
                 "hidden": false,
@@ -117,7 +118,23 @@ All resources are returned in JSON format.
                 "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158acb38-2001-47ab-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/bkm01_introduction.xhtml",
                 "thumbnailUrl": "https://revel-stg.pearson.com/eps/sanvan/api/item/1b3b9690-8aef-4ae7-9820-9d6453ccfdd6/1/file/images/default_chapter_thumbnail.jpg",
                 "title": "Chapter 1"
-            }
+              },
+              {
+                "id": 2000000000085,
+                "excluded": false,
+                "hidden": false,
+                "released": false,
+                "contentVersion": 1,
+                "level": 1,
+                "pointsPossible": 0,
+                "assetType": "chapter",
+                "itemHref": "158bca38-2001-47ba-a21e-e871d054de5b/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/bkm01_reading1.xhtml",
+                "itemId": "bbbb19fd4547d01a8085ca04034117d165bff9165",
+                "revelUrl": "https://content.stg-openclass.com/eps/sanvan/api/item/158bcb38-2001-47ba-a21e-e871d054de5a/1/file/davies-jhoa-8e-vol1_v10/OPS/xhtml/bkm01_reading1.xhtml",
+                "thumbnailUrl": "https://revel-stg.pearson.com/eps/sanvan/api/item/1b3a9690-8aef-4be7-9820-9d6453ccfdd6/1/file/images/default_chapter_thumbnail.jpg",
+                "title": "Reading 1"
+              }
+            ]
             
 + Response 404
     [Not Found Error][]
@@ -4806,8 +4823,9 @@ All resources are returned in JSON format.
             Access-Control-Allow-Origin: *
 
     + Body
-            
-             {
+
+            [
+              {
                 "dueDate": "2015-10-23T13:11:17.953Z",
                 "bookId": "52e37e2a-48a4-46ed-81f4-366e47b52179",
                 "id": 2000000000782,
@@ -4827,7 +4845,29 @@ All resources are returned in JSON format.
                 "title": "AMS-Integration-RZsxR",
                 "type": "AMS-Integration-KcT7k",
                 "categoryKey": "egK7r"
-            }
+              },
+              {
+                "dueDate": "2015-10-28T13:11:17.953Z",
+                "bookId": "52e37e2a-48a4-46ed-81f4-366e47b52179",
+                "id": 2000000000787,
+                "gradable": false,
+                "hidden": false,
+                "pointsPossible": 75,
+                "ungradablePoints": 10,
+                "assignmentId": "ad76073c-83f6-11e5-8bcf-feff819cdc9f",
+                "assignmentPartId": "c34127c5-44b3-4080-b381-9bd92869f3d8",
+                "bookAssignmentId": "5c749506-08ad-4818-bfed-6576a70f527c",
+                "newAssignmentId": "941db63d-f403-40a8-9c6f-7d3aff46bc42",
+                "contentTarget": "inst",
+                "parentAssignmentId": "34eb5b8e-7d2b-4972-8271-a9e0bbc86c5c",
+                "shortTitle": "AMS-Integration-ABlzX",
+                "source": "AMS-Integration-mul05",
+                "subType": "AMS-Integration-sp1iz",
+                "title": "AMS-Integration-rzSXr",
+                "type": "AMS-Integration-KcT7k",
+                "categoryKey": "egK7r"
+              }
+            ]
 
 + Response 404
     [Not Found Error][]
