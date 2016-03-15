@@ -5093,6 +5093,293 @@ NOTE:
 + Response 403
     [Authorization Failed Error][]
 
+# Templates Routes
+## Create a Learning Template  [/learningtemplates]
+### Create and save a new learning-template [POST]
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            content-type: application/json
+
+    + Body
+
+            [
+              {
+                "activities": [
+                  {
+                    "activityId": "99f26e70",
+                    "activityType": "apex-writing-assignment",
+                    "description": "APEX test activity 1a",
+                    "gradable": true,
+                    "href": "#/courses/dcaff492/assignments/99f2778a/player/99f278f2?pageId=99f26e70",
+                    "namespace": "http://bogus2.revel.pearson.com/",
+                    "scorable": false,
+                    "sequence": 0,
+                    "subType": "subtest",
+                    "templateId": "99f2778a",
+                    "title": "APEX Test Activity #1a",
+                    "version": 1
+                  },
+                  {
+                    "activityId": "99f27140",
+                    "activityType": "apex-writing-assignment",
+                    "description": "APEX test activity 1b",
+                    "gradable": true,
+                    "href": "#/courses/dcaff492/assignments/99f2778a/player/99f27a46?pageId=99f27140",
+                    "namespace": "http://bogus2.revel.pearson.com/",
+                    "scorable": false,
+                    "sequence": 1,
+                    "subType": "subtest",
+                    "templateId": "99f2778a",
+                    "title": "APEX Test Activity #1b",
+                    "version": 1
+                  },
+                  {
+                    "activityId": "99f2760e",
+                    "activityType": "apex-writing-assignment",
+                    "description": "APEX test activity 1c",
+                    "gradable": true,
+                    "href": "#/courses/dcaff492/assignments/99f2778a/player/99f27b36?pageId=99f2760e",
+                    "namespace": "http://bogus2.revelx.pearson.com/",
+                    "scorable": false,
+                    "sequence": 1,
+                    "subType": "subtest",
+                    "templateId": "99f2778a",
+                    "title": "APEX Test Activity #1c",
+                    "version": 1
+                  }
+                ],
+                "assignmentType": "apextest",
+                "description": "APEX testing assignment-template 2",
+                "discipline": "apextest",
+                "gradable": true,
+                "href": "#/courses/dcaff492/assignments/99f2778a/player/99f27bfe?pageId=abce2358",
+                "metadata": {
+                  "*itemSeq": 21,
+                  "*seqNbr": 18
+                },
+                "namespace": "http://bogus2.revel.pearson.com/",
+                "numOfParts": 0,
+                "provider": "apextest",
+                "scorable": true,
+                "status": "active",
+                "subType": "subtest",
+                "title": "APEX Test Template #1",
+                "templateId": "99f2778a",
+                "templateType": "quiz",
+                "type": "APX",
+                "version": 1
+              },
+              {
+                "activities": [
+                  {
+                    "activityId": "1b8f3b8e",
+                    "activityType": "apex-quiz",
+                    "description": "APEX test activity 2a",
+                    "gradable": true,
+                    "href": "#/courses/dcaff492/assignments/acaff3c0/player/99f27e56?pageId=abcf6305",
+                    "namespace": "http://bogus2.revel.pearson.com/",
+                    "scorable": false,
+                    "sequence": 0,
+                    "subType": "subtest",
+                    "templateId": "acaff3c0",
+                    "title": "APEX Test Activity #2a",
+                    "version": 1
+                  },
+                  {
+                    "activityId": "0c7795d5",
+                    "activityType": "apex-quiz",
+                    "description": "APEX test activity 2b",
+                    "gradable": true,
+                    "href": "#/courses/dcaff492/assignments/acaff3c0/player/99f27f14?pageId=abca2042",
+                    "namespace": "http://bogus2.revel.pearson.com/",
+                    "scorable": false,
+                    "sequence": 1,
+                    "subType": "subtest",
+                    "templateId": "acaff3c0",
+                    "title": "APEX Test Activity #2b",
+                    "version": 1
+                  },
+                  {
+                    "activityId": "0a89f6aa",
+                    "activityType": "apex-quiz",
+                    "description": "APEX test activity 2c",
+                    "gradable": true,
+                    "href": "#/courses/dcaff492/assignments/acaff3c0/player/99f27fd2?pageId=abca2042",
+                    "namespace": "http://bogus2.revelx.pearson.com/",
+                    "scorable": false,
+                    "sequence": 1,
+                    "subType": "subtest",
+                    "templateId": "acaff3c0",
+                    "title": "APEX Test Activity #2c",
+                    "version": 1
+                  }
+                ],
+                "assignmentType": "apextest",
+                "description": "APEX testing assignment-template 2",
+                "discipline": "apextest",
+                "gradable": true,
+                "href": "#/courses/dcaff492/assignments/acaff3c0/player/99f28090?pageId=abce2358",
+                "metadata": {
+                  "*itemSeq": 22,
+                  "*seqNbr": 5
+                },
+                "namespace": "http://bogus2.revel.pearson.com/",
+                "numOfParts": 0,
+                "provider": "apextest",
+                "scorable": true,
+                "status": "active",
+                "subType": "subtest",
+                "title": "APEX Test Template #2",
+                "templateId": "acaff3c0",
+                "templateType": "quiz",
+                "type": "APX",
+                "version": 1
+              }
+            ]
+
++ Response 204
+    No Content
++ Response 400
+    Bad Request
++ Response 401
+    Unauthorized
++ Response 403
+    Forbidden
++ Response 404
+    Not Found
+          
+
+## Update a Learning Template  [/learningtemplates/{templateId}]
+### Modify and save a Learning Template [PUT]
+    
++ Parameters
+    + templateId (required, string, `4072f6d4-4843-11e5-a151-feff819cdc9f`)... 
+      Example: /learningtemplates/4072f6d4-4843-11e5-a151-feff819cdc9f
+
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            content-type: application/json
+
+    + Body
+
+          {
+            "activities": [
+              {
+                "activityId": "1b8f3b8e",
+                "activityType": "apex-quiz",
+                "description": "APEX test activity 2a",
+                "gradable": true,
+                "href": "#/courses/dcaff492/assignments/acaff3c0/player/99f27e56?pageId=abcf6305",
+                "namespace": "http://bogus2.revel.pearson.com/",
+                "scorable": false,
+                "sequence": 0,
+                "subType": "subtest",
+                "templateId": "acaff3c0",
+                "title": "APEX Test Activity #2a",
+                "version": 1
+              },
+              {
+                "activityId": "0c7795d5",
+                "activityType": "apex-quiz",
+                "description": "APEX test activity 2b",
+                "gradable": true,
+                "href": "#/courses/dcaff492/assignments/acaff3c0/player/99f27f14?pageId=abca2042",
+                "namespace": "http://bogus2.revel.pearson.com/",
+                "scorable": false,
+                "sequence": 1,
+                "subType": "subtest",
+                "templateId": "acaff3c0",
+                "title": "APEX Test Activity #2b",
+                "version": 1
+              },
+              {
+                "activityId": "0a89f6aa",
+                "activityType": "apex-quiz",
+                "description": "APEX test activity 2c",
+                "gradable": true,
+                "href": "#/courses/dcaff492/assignments/acaff3c0/player/99f27fd2?pageId=abca2042",
+                "namespace": "http://bogus2.revelx.pearson.com/",
+                "scorable": false,
+                "sequence": 1,
+                "subType": "subtest",
+                "templateId": "acaff3c0",
+                "title": "APEX Test Activity #2c",
+                "version": 1
+              }
+            ],
+            "assignmentType": "apextest",
+            "description": "APEX testing assignment-template 2",
+            "discipline": "apextest",
+            "gradable": true,
+            "href": "#/courses/dcaff492/assignments/acaff3c0/player/99f28090?pageId=abce2358",
+            "metadata": {
+              "*itemSeq": 22,
+              "*seqNbr": 5
+            },
+            "namespace": "http://bogus2.revel.pearson.com/",
+            "numOfParts": 0,
+            "provider": "apextest",
+            "scorable": true,
+            "status": "active",
+            "subType": "subtest",
+            "title": "APEX Test Template #2",
+            "templateId": "acaff3c0",
+            "templateType": "quiz",
+            "type": "APX",
+            "version": 1
+          }
+
++ Response 204
+    No Content
++ Response 400
+    Bad Request
++ Response 401
+    Unauthorized
++ Response 403
+    Forbidden
++ Response 404
+    Not Found
 
 
+## Delete a Learning Template [/learningcontexts/{contextType}/{contextId}/templates]
+### delete learning templates and associated activities [DELETE]
+    
++ Parameters
+    + contextType (required,string,`book`) ... /learningcontexts/template
+    + contextId (required, string, `3072a6d3-3844-22b5-f151-babb819dcd9a`)... 
+      Ex: /learningcontexts/book/3072a6d3-3844-22b5-f151-babb819dcd9a/templates  
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            content-type: application/json
 
+    + Body
+
+          {
+            "templateIds": [
+              "fa41a6d9-473a-4d00-b4cd-cb6ac0096181",
+              "d4c7d57c-878c-4771-986a-83cf4567d7d3"
+            ]
+         }
+
+
++ Response 204
+    No Content
++ Response 400
+    Bad Request
++ Response 401
+    Unauthorized
++ Response 403
+    Forbidden
++ Response 404
+    Not Found
