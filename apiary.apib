@@ -5395,11 +5395,6 @@ NOTE:
 ## Delete Template-Contexts  [/learningcontexts/{contextType}/{contextId}/templatecontexts]
 ### Delete all or specific template-contexts associated with a specific book [DELETE]
   
-     NOTE: 
-        When the optional request-body absent, all template-context associations with the book are 
-     deleted. When the request-body is present, only the specified template-contexts will be 
-     deleted.
-    
 + Parameters
     + contextType (required, string, `book` or 'template')... 
       Example: /learningcontexts/book
@@ -5407,6 +5402,11 @@ NOTE:
       Example: /learningcontexts/book/3e42cd5c-e614-495e-9779-ef6f0eb9ecab
     
 + Request
+  
+     NOTE: 
+        The request-body is optional. When present, only the specified template-contexts will be 
+     deleted. When absent, all template-contexts will be deleted.
+
     + Headers
     
             Correlation-Id: UUID
