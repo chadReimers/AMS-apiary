@@ -4082,7 +4082,7 @@ All resources are returned in JSON format.
             X-Authorization: PI Auth Token
             accept: application/json
             
-    + body 
+    + Body 
     
             {
                 "assetIds": [
@@ -5019,8 +5019,8 @@ NOTE:
 
     + Body
             
-         [
-             {
+             [
+                {
                     "dueDate": "2015-10-23T13:11:17.953Z",
                     "bookId": "52e37e2a-48a4-46ed-81f4-366e47b52179",
                     "id": 2000000000782,
@@ -5086,6 +5086,7 @@ NOTE:
                     
                 }
             ]
+            
 + Response 404
     [Not Found Error][]
 + Response 401
@@ -5388,3 +5389,50 @@ NOTE:
 
 + Response 403
     [Authorization Failed Error][]
+
+
+# Group Template-Contexts Routes
+## Delete Template-Contexts  [/learningcontexts/{contextType}/{contextId}/templatecontexts]
+### Delete all or specific template-contexts associated with a specific book [DELETE]
+  
+     NOTE: 
+        When the optional request-body absent, all template-context associations with the book are 
+     deleted. When the request-body is present, only the specified template-contexts will be 
+     deleted.
+    
++ Parameters
+    + contextType (required, string, `book` or 'template')... 
+      Example: /learningcontexts/book
+    + contextId (required, string, `3e42cd5c-e614-495e-9779-ef6f0eb9ecab`)... 
+      Example: /learningcontexts/book/3e42cd5c-e614-495e-9779-ef6f0eb9ecab
+    
++ Request
+    + Headers
+    
+            Correlation-Id: UUID
+            X-Authorization: PI Auth Token
+            content-type: application/json
+
+    + Body
+
+            {
+                "templateIds": [
+                    "fa41a6d9-473a-4d00-b4cd-cb6ac0096181",
+                    "d4c7d57c-878c-4771-986a-83cf4567d7d3"
+                  ]
+            }
+
+
++ Response 200
+
++ Response 400
+    [Bad Request Error][]
+
++ Response 403
+    [Authentication Required Error][]
+
++ Response 403
+    [Authorization Failed Error][]
+
++ Response 404
+    [Not Found Error][]
