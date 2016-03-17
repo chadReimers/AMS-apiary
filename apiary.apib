@@ -5095,7 +5095,7 @@ NOTE:
     [Authorization Failed Error][]
 
 # Group Templates Routes
-## Create a Learning Template  [/learningtemplates]
+## Create a Learning Template  [/templates]
 ### Create and save a new learning-template [POST]
     
 + Request
@@ -5254,7 +5254,7 @@ NOTE:
     [Authorization Failed Error][]
 
 
-## Update a Learning Template  [/learningtemplates/{templateId}]
+## Update a Learning Template  [/templates/{templateId}]
 ### Modify and save a Learning Template [PUT]
     
 + Parameters
@@ -5530,8 +5530,8 @@ NOTE:
 + Response 404
     [Not Found Error][]
     
-## Retrieve assignment-templates associated with a specific  book- or template-ID. [/learningcontexts/{contextType}/{contextId}/templates{expand}{filter}]
-### Retrieve assignment-templates by context /learningcontexts/{contextType}/{contextId}/templates{expand}{filter} [GET]
+## Retrieve assignment-templates associated with a specific  book- or template-ID. [/learningcontexts/{contextType}/{contextId}/templates?{expand}{filter}]
+### Retrieve assignment-templates by context /learningcontexts/{contextType}/{contextId}/templates?{expand}{filter} [GET]
 
       NOTE: 
           When expand is present, response includes context attributes along with the template.
@@ -5547,9 +5547,9 @@ NOTE:
       Format: [?|&]filter={filterName}::{filterValue}[,{filterName}::{filterValue}]
         where filterName is one of 'itemLevel','status','subContextId','templateType' or 'type'
         and filterValue is the value to filter by
-      Example: /learningcontexts/book/3e42cd5c-e614-495e-9779-ef6f0eb9ecab
+      Example: /learningcontexts/book/3e42cd5c-e614-495e-9779-ef6f0eb9ecab/templates
         ?filter=subContextId::c90022cc-163a-4c53-a9d3-47b9b48e649f
-      Example: /learningcontexts/book/3e42cd5c-e614-495e-9779-ef6f0eb9ecab
+      Example: /learningcontexts/book/3e42cd5c-e614-495e-9779-ef6f0eb9ecab/templates
         ?expand=context&filter=status::active
       NOTE: Comma-separate multiple filter name/value pairs. Multiple filters are ANDed. 
     
@@ -5648,8 +5648,8 @@ NOTE:
 + Response 403
     [Authorization Failed Error][]
 
-## Retrieve template-contexts associated with a specific book- or template-ID. [/learningcontexts/{contextType}/{contextId}/templatecontexts{filter}]
-### Retrieve assignment-templates by context /learningcontexts/{contextType}/{contextId}/templatecontexts{filter} [GET]
+## Retrieve template-contexts associated with a specific book- or template-ID. [/learningcontexts/{contextType}/{contextId}/templatecontexts?{filter}]
+### Retrieve assignment-templates by context /learningcontexts/{contextType}/{contextId}/templatecontexts?{filter} [GET]
 
 + Parameters
     + contextType (required, string, `book` or 'template')... 
@@ -5661,7 +5661,7 @@ NOTE:
         where filterName is one of 'itemLevel','status','subContextId','templateType' or 'type'
         and filterValue is the value to filter by
       Example: /learningcontexts/book/c42c622a-d714-11e5-ab30-625662870761
-        ?filter=subContextId::c90022cc-163a-4c53-a9d3-47b9b48e649f
+        ?filter=subContextId::c90022cc-163a-4c53-a9d3-47b9b48e649f/templatecontexts
       NOTE: Comma-separate multiple filter name/value pairs. Multiple filters are ANDed. 
     
 + Request
